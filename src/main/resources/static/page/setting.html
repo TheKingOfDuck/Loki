@@ -1,0 +1,48 @@
+<style>
+    .layui-form-item .layui-input-company {width: auto;padding-right: 10px;line-height: 38px;}
+</style>
+<div class="layuimini-container layuimini-page-anim">
+    <div class="layuimini-main">
+
+        <div class="layui-form layuimini-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label required">邮箱地址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="mail" lay-verify="required" lay-reqtext="mail" placeholder="mail"  value="Loki" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label required">网站域名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="domain" lay-verify="required" lay-reqtext="mail" placeholder="mail"  value="https://github.com/TheKingOfDuck/Loki" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-normal" lay-submit lay-filter="setting">确认保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form
+            , layer = layui.layer;
+
+        /**
+         * 初始化表单，要加上，不然刷新部分组件可能会不加载
+         */
+        form.render();
+
+        //监听提交
+        form.on('submit(setting)', function (data) {
+            parent.layer.alert("这功能没啥必要，还没写。", {
+                title: 'GAGAGA'
+            });
+            return false;
+        });
+
+    });
+</script>

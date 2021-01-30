@@ -1,0 +1,3447 @@
+﻿/*--头像--*/
+.lineBg{
+	filter: alpha(opacity=10);
+	-webkit-opacity: 0.1;
+	-moz-opacity: 0.1;
+	opacity: 0.1;
+}
+/*引用图片*/
+.skin_ico16 {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  background: url(images/icon16.png?V=V6_1_2017-04-13) no-repeat;
+  _background: url(images/icon16.gif?V=V6_1_2017-04-13) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+/*下拉组件*/
+.pulldown,.uc_container,.djwk_container,.person_container,.account_container{
+	width:auto;
+	height:auto;
+	position:absolute;
+	z-index:1000;
+	background:#fff;
+	display:none;
+	border:1px solid #999;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;
+	padding: 1px;
+	font-size:12px;
+	border-bottom:4px solid #42b3e5;
+	padding: 18px 3px;
+}
+.pulldownIframe,.uc_iframe,.djwk_iframe,.person_iframe,.account_iframe{
+	width:auto;
+	height:auto;
+	position:absolute;
+	z-index:999;
+	border:0;
+	background:#fff;
+	display:none;
+}
+.pulldown ul li,.uc_container ul li,.djwk_container ul li,.person_container ul li{
+	color:#000;
+	cursor:pointer;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	display: block;
+	width: 115px;
+	height: 39px;
+	color: #000;
+	cursor: pointer;
+	padding-left: 20px;
+	line-height:40px;
+}
+.layout_header_bg{ display: none; position: absolute; z-index: 1; top: 0; left: 0;}
+.layout_header_bg_mask{ display: none; position: absolute; z-index: 2; top: 0; left: 0; width: 100%; height: 50px; background: #000;  opacity: 0.52; filter: alpha(opacity=52); *zoom: 1;}
+/******头部区域******/
+.area{
+	position: absolute;
+	z-index: 3;
+	top:0;
+	left:0;
+	width: 100%;
+	height:50px;
+	background-repeat: no-repeat;
+}
+.area_l{
+	position: absolute;
+	z-index: 3;
+	width:500px;
+	height:50px;
+}
+.accountdiv{
+	width:20px;
+	height:50px;
+	/*overflow: hidden;*/
+	background: url("images/nav_center_up.png?V=V5_6_2016_05_31") center center no-repeat;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	top:0px;
+	left:0px;
+	z-index:9;
+	/*filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;*/
+}
+.accountdiv:hover,.account_current{
+	background: url("images/nav_center_up_hover.png?V=V5_6_2016_05_31") center center no-repeat;
+	/*overflow: hidden;*/
+	cursor: pointer;
+	/*filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;*/
+}
+.accountdiv:hover #account_container{
+	display: block;
+	top:0;
+}
+.logodiv{
+	height:50px;
+	margin-left:20px;
+}
+.comdiv{
+	margin-left:5px;
+	margin-top: 6px;
+}
+.comdiv_cn{
+	/* width:420px; */
+	height:20px;
+	line-height:20px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	font-size:14px;
+	text-align: left;
+}
+.comdiv_en{
+	/* width:420px; */
+	height:18px;
+	line-height:18px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+	font-size:12px;
+	text-align: left;
+}
+.comdiv_group_cn{font-size:16px;margin-top:6px;margin-right: 5px;}
+#comdiv_cn.comdiv_cn{margin-top:8px;font-size: 14px;}
+.area_r{
+	position: absolute;
+	z-index: 3;
+	width:auto;
+	height:50px;
+	top:0;
+	right:0;
+}
+.area_r_icon{
+	width:auto;
+	height:50px;
+	margin:0 15px;
+	position:relative;
+}
+.area_r_icon a div{
+	margin-left:20px;
+}
+
+/* 顶部功能入口：一堆图标*/
+.top_ico,.top_ico:hover{
+	width: 24px;
+	height: 24px;
+	margin: 0 5px;
+	*zoom: 1;
+	overflow: hidden;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+.top_ico{opacity:0.8;filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity:0.8;}
+.top_ico:hover{opacity:1;filter:alpha(opacity=100);-moz-opacity:1;-khtml-opacity:1;}
+.return_ioc,.return_ioc:hover,.return_ioc2,.return_ioc2:hover {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+}
+
+.search_ico,.search_ico:hover{
+	background-position: -40px -107px;
+}
+.forward_ico,.forward_ico:hover{
+	background-position: -73px -39px;
+}
+.back_ico,.back_ico:hover{
+	background-position: -39px -39px;
+}
+.f5_ioc,.f5_ioc:hover{
+	background-position: -108px -73px;
+}
+.main_ioc,.main_ioc:hover{
+	background-position: -74px -73px;
+}
+.a8_ioc,.a8_ioc:hover{
+	background-position: -39px -5px;
+}
+.a6_ioc,.a6_ioc:hover{
+	 background-position: -73px -5px;
+}
+.a8_U8ioc,.a6_U8ioc,.a8_U8ioc:hover,.a6_U8ioc:hover{
+	background-position: -107px -5px;
+}
+.a8u8_ioc,.a6u8_ioc,.a8u8_ioc:hover,.a6u8_ioc:hover{
+	background-position: -107px -5px;
+}
+.msg_ioc,.msg_ioc:hover{
+	background-position: -141px -5px;
+	position:relative;
+}
+.return_ioc,.return_ioc:hover{
+	background-position: -142px -73px;
+}
+.return_ioc2,.return_ioc2:hover{
+	background-position: -5px -5px;
+}
+.f5_ioc1,.f5_ioc1:hover{
+	background-position: -5px -5px;
+}
+.help_ioc,.help_ioc:hover{
+	background-position: -107px -39px;
+}
+.dajia_work_ico,.dajia_work_ico:hover{
+	background-position: -141px -39px;
+	position:relative;
+}
+.set_right_ico,.set_right_ico:hover{
+	background-position: -74px -107px;
+}
+.setting_ico,.setting_ico:hover{
+	background-position: -40px -73px;
+}
+.admin_exit_ico,.admin_exit_ico:hover{
+	background-position: -5px -39px;
+}
+.customService_ico,.customService_ico:hover{
+	background-position: -5px -107px;
+}
+.set_right_ico,.set_right_ico:hover{
+	width:15px;
+	height:24px;
+	margin:15px 0 0 4px;
+}
+.point_more{
+	width:9px;
+	height:9px;
+	background:url(images/point_more.png?V=V6_1_2017-04-13) no-repeat;*zoom: 1;
+	position:absolute;
+	top:0;
+	right:0;
+}
+.area_r_images{
+	height:30px;
+	margin:9px 15px 9px 8px;
+	padding-top:7px;
+	position:relative;
+}
+
+/*--下拉--*/
+.areaPulldown{
+	width:100px;
+	height:auto;
+	position:absolute;
+	top:40px;
+	right:20px;
+	background:#fff;
+	z-index:999;
+	display:none;
+	overflow:hidden;
+	border:1px solid #999;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;
+}
+.areaPulldown ul li{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+	color:#000;
+	text-align:center;
+	cursor:pointer;
+}
+.chanageLoginAccount{
+	position: absolute;
+	 top:0px;
+	left:0px;
+	z-index: 300;
+	background: url("images/accountarrow.png?V=V6_1_2017-04-13") no-repeat;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	display:none;
+}
+.accountSelectorOptions{
+	position: absolute;
+	top:50px;
+	left:20px;
+	margin:0;
+	z-index: 400;
+	width:auto;
+	height:auto;
+	background: #fff;
+	border:1px #5191d1 solid;
+	-moz-box-shadow:0px 2px 8px rgba( 0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 8px rgba( 0, 0, 0, 0.3);
+	box-shadow: 0px 2px 8px rgba( 0, 0, 0, 0.3);
+	font-size:12px;
+
+}
+.account_container{
+	padding: 0;
+}
+.accountSelectorOptions .account_container_ul{
+	width:180px;
+	float:left;
+	height:auto;
+}
+.accountSelectorOptions li{
+	float:left;
+	height:39px;
+	width:160px;
+	line-height:39px;
+	vertical-align:middle;
+	background: #fff;
+	overflow:hidden;
+	padding: 0px 10px;
+	cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.accountSelectorOptions li:hover{
+	display: block;
+	height:39px;
+	background: #42b3e5;
+	color: #fff;
+}
+.accountSelectorOptions li.currentAccount{
+	display: block;
+	height:39px;
+	background: #1c8abb;
+	color: #fff;
+}
+.areaPulldowniframe{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:40px;
+	right:20px;
+	background:#fff;
+	z-index:998;
+	display:none;
+	border:0;
+}
+.line_addIco{
+	width:27px;
+	height:27px;
+	background:url(images/line_add_ico.png?V=V6_1_2017-04-13) no-repeat;
+	position: absolute;
+	top:70px;
+	right:4px;
+}
+.textValStyle{
+	color:#FC0;
+	margin:0 5px;
+}
+
+.dragSkin{
+	position:absolute;
+	z-index:10;
+	width:48px;
+	height:64px;
+	top:50px;
+	right:50px;
+	cursor:pointer;
+	background:url(images/time_line_ico2.png?V=V6_1_2017-04-13)  no-repeat;
+}
+.dragSkinlowe{
+	position:absolute;
+	z-index:10;
+	width:0px;
+	height:0px;
+	right:13px;
+	cursor:pointer;
+	background:url(images/time_line_ico.png?V=V6_1_2017-04-13)  no-repeat;
+	display: none;
+}
+.dragSkinlowe:hover{
+	background:url(images/time_line_ico_hover.png?V=V6_1_2017-04-13)  no-repeat;
+}
+#myCanvas{
+	margin-top: 11px;
+	margin-left: 7px;
+}
+/**导航中间**/
+.nav_center{
+	width:auto;
+	height:40px;
+	padding:5px 0px;
+	float:left;
+	margin-left:20px;
+	cursor:pointer;
+	position:relative;
+}
+.nav_center .nav_center_title{
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity:0.7;
+	opacity: 0.7;
+}
+.nav_center_current .nav_center_title, .nav_top_current .nav_center_title{
+	filter:alpha(opacity=100);
+	-moz-opacity:1;
+	-khtml-opacity:1;
+	opacity:1;
+}
+.nav_center_currentIco{
+	width:100%;
+	height:4px;
+	position:absolute;
+	bottom:0;
+	display:none;
+}
+.nav_center_current>.nav_center_currentIco{
+	display:block;
+}
+.nav_center_title{
+	margin-top: 10px;
+	height:30px;
+	line-height:30px;
+	vertical-align:middle;
+	font-size:14px;
+	display:block;
+	width:auto;
+	margin-left:2px;
+	margin-right:2px;
+}
+.my_home_ico{
+	width:24px;
+	height:24px;
+	display: inline-block;
+	vertical-align:middle;
+}
+.rd_department_ico{
+	width:24px;
+	height:24px;
+	background:url(images/nav_department.png?V=V6_1_2017-04-13) no-repeat;
+	_background:url(images/nav_department.gif?V=V6_1_2017-04-13) no-repeat;
+	display: inline-block;
+	vertical-align:middle;
+}
+.unit_space_ico{
+	width:24px;
+	height:24px;
+	background:url(images/nav_space.png?V=V6_1_2017-04-13) no-repeat;
+	_background:url(images/nav_space.gif?V=V6_1_2017-04-13) no-repeat;
+	display: inline-block;
+	vertical-align:middle;
+}
+.nav_more_up{
+	width:24px;
+	height:24px;
+}
+.nav_more_upico{
+	width:13px;
+	height:7px;
+	display: inline-block;
+	vertical-align:top;
+	margin-top: 12px;
+	overflow: hidden;
+	background-image:url(images/nav_space_more.png?V=V6_1_2017-04-13);
+	background-repeat: no-repeat;
+}
+.nav_more_upico_hover{
+	width:13px;
+	height:6px;
+	display: inline-block;
+	vertical-align:top;
+	margin-top: 12px;
+	overflow: hidden;
+	background-image:url(images/nav_space_more.png?V=V6_1_2017-04-13);
+	background-repeat: no-repeat;
+}
+.pushdown_second{
+	position:relative;
+}
+.pulldown ul li.pushdown_second{
+	display: block;
+	width: 115px;
+	height: 39px;
+	color: #000;
+	cursor: pointer;
+	padding-left: 20px;
+	font-size:12px;
+	position:relative;
+}
+.pushdown_second_name{
+	display: inline-block;
+	width: 80px;
+	height: 39px;
+	line-height: 35px;
+	vertical-align: middle;
+	-moz-binding: url("ellipsis.xml#ellipsis");
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size:14px;
+}
+.pushdown_dajia_title{
+	display: inline-block;
+	width: 140px;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+	-moz-binding: url("ellipsis.xml#ellipsis");
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size:14px;
+	float:left;
+	font-family: "Microsoft YaHei",SimSun,Arial,Helvetica,sans-serif;
+	margin-bottom:5px;
+}
+.pushdown_dajia_num{
+	display: inline-block;
+	width: 30px;
+	height: 17px;
+	line-height: 17px;
+	vertical-align: middle;
+	-moz-binding: url("ellipsis.xml#ellipsis");
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size:14px;
+	float: right;
+	margin-right:20px;
+	background:#ff6633;
+	-moz-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	color:#fff;
+	text-align:center;
+	margin-top:11px;
+	margin-bottom:5px;
+}
+/******头部区域结束******/
+
+
+
+
+/*online*/
+.vst_state {
+    position:absolute;
+    display: none;
+    /**top: 126px;
+    left:25px;*/
+    width: 100px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding:2px;
+    z-index:10;
+}
+.vst_state_item{
+    font-size:12px;
+    display:block;
+    height:26px;
+    line-height:26px;
+    vertical-align:middle;
+    color:#000;
+}
+.vst_state_item:hover{
+    background:#42b3e5;
+    color:#fff;
+	zoom:1
+}
+
+.vst_online_box {
+	position: relative;
+	text-align: center;
+	min-width: 70px;
+}
+.onlineNum_adm{
+	line-height:20px;
+}
+.vst_fun{
+	position: relative;
+	z-index:2;
+}
+.vst_boxbg{
+	position: absolute;
+	width:25px;
+	height:104px;
+	top:2px;
+	left:2px;
+	background:#e6eaed;
+	z-index:1;
+}
+.allow_up_ico{
+	display: inline-block;
+	vertical-align: middle;
+	height: 16px;
+	width: 16px;
+	line-height: 16px;
+	background: url(images/allow_up_ico.png?V=V6_1_2017-04-13) no-repeat;
+	_background: url(images/allow_up_ico.gif?V=V6_1_2017-04-13) no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+}
+
+.online1{
+    background-position: 0px 0px;
+}
+.online2{
+    background-position: -48px 0px;
+}
+.online3{
+    background-position: -16px 0px;
+}
+.online4{
+    background-position: -32px 0px;
+}
+
+
+
+
+/*个人空间*/
+
+.space_iframe{
+	width:auto;
+	height:180px;
+	position:absolute;
+	top:50px;
+	right:280px;
+	z-index:9998;
+	border:0;
+	display:none;
+}
+.space_pop ul li{
+	width:160px;
+	height:41px;
+	line-height:41px;
+	color:#4f4f4f;
+	cursor:pointer;
+	padding-left:26px;
+	padding-right:38px;
+	font-size:14px;
+	white-space: nowrap;
+   	overflow: hidden;
+   	text-overflow: ellipsis;
+	margin-right:3px;
+	margin-bottom:3px;
+}
+.nav_center_more{
+	margin-top:10px;
+	height:30px;
+	width:auto;
+	padding:5px;
+	float:left;
+	cursor:pointer;
+	position:relative;
+}
+.space_list{
+	width:auto;
+	height:auto;
+	float:left;
+	width: 227px;
+}
+#space_list1{ width: auto; }
+.space_ico{
+	width: 16px;
+	height: 16px;
+	border: 0px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 7px;
+	margin-right:6px;
+}
+.space_item1{
+	width: 0;
+    height: 0;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px #fff;
+    overflow: hidden;
+    position: absolute;
+    top: -9px;
+    right: 10px;
+    z-index: 1
+}
+.space_item2{
+	width: 0;
+    height: 0;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    border-bottom: solid 10px #999;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    z-index: -1
+}
+.space_item3{
+	font-size:30px;
+	color:#999;
+	position:absolute;
+	top:19px;
+	right:2px;
+	display:none;
+}
+.space_item4{
+	font-size:30px;
+	color:#fff;
+	position:absolute;
+	top:20px;
+	right:2px;
+	display:none;
+}
+.spaceCurrent{
+	background:#a1daf4;
+	color:#111111;
+}
+.spaceCurrent .space_ico{
+	/**
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+	*/
+}
+
+.spaceStyle .space_ico{
+	/*
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+	*/
+}
+
+.skin_set_contaner{
+    position:absolute;
+    /*border:1px #b6b6b6 solid;*/
+    background:#fff;
+    width:350px;
+    right:0px;
+	top:0px;
+    z-index:100;
+    font-size:12px;
+    height:auto;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;
+	display:none;
+}
+.skin_top_bar span:hover{
+	color: #fff;
+}
+#skin_set_iframe{
+	top:0px;
+	right:0px;
+	width:350px;
+    position:absolute;
+    border:0px;
+    z-index:99;
+    display:none;
+    height:auto;
+    background: #fff;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;
+}
+.skin_set_title{
+	height:52px;
+	background:#4c4c4c;
+
+}
+.skin_set_text{
+	color:#dbdbdb;
+	font-size: 16px;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+.skin_set_close{
+	float: right;
+	width: 30px;
+	height: 50px;
+	overflow: hidden;
+	background: url("images/metroShortAddDialog_close.png?V=V6_1_2017-04-13") no-repeat 8px 20px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.skin_content{
+	/*width:285px;*/
+	margin:auto;
+	margin-bottom:15px;
+}
+.skin_content_admin_bg{
+	height: 263px;
+	width:1px;
+	overflow:hidden;
+	background: url("images/skin_admin_bg.png?V=V6_1_2017-04-13") no-repeat left center;
+}
+
+/*换肤－首页－大背景图*/
+.mainBody_skin .description_ ,.recommend_skin .description,.modify_skin .description{
+	height:30px;
+	color:#585858;
+	line-height:30px;
+	vertical-align:middle;
+	font-size: 14px;
+}
+.mainBody_skin .description ,.recommend_skin .description,.modify_skin .description{
+	height:30px;
+	color:#585858;
+	line-height:30px;
+	vertical-align:middle;
+	font-size: 14px;
+}
+
+.mainBody_skin .list{
+	display:block;
+	height:28px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+}
+.mainBody_skin .list .bgimg{
+	background:#53718b;
+	width:234px;
+	height:28px;
+	float:left;
+	position: relative;
+}
+.mainBody_skin .list .bgcolor{
+	background:#53718b;
+	width:46px;
+	height:28px;
+	float:left;
+	margin-left:5px;
+	position: relative;
+}
+
+/*换肤－首页－顶部*/
+.header_skin .description_ ,.recommend_skin .description,.modify_skin .description{
+	height:30px;
+	color:#585858;
+	line-height:30px;
+	vertical-align:middle;
+	font-size: 14px;
+}
+.header_skin .description ,.recommend_skin .description,.modify_skin .description{
+	height:30px;
+	color:#585858;
+	line-height:30px;
+	vertical-align:middle;
+	font-size: 14px;
+}
+
+.header_skin .list{
+	display:block;
+	height:28px;
+	margin-top: 3px;
+	margin-bottom: 28px;
+}
+.header_skin .list .bgimg{
+	background:#ff0;
+	width:234px;
+	height:28px;
+	float:left;
+	position: relative;
+}
+.opacity_border {
+	background: #00cf78;
+	/*
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	*/
+	overflow: hidden;
+	position: absolute;
+}
+.header_skin .list  .bgimg1{
+	background: url("images/header1.png?V=V6_1_2017-04-13") no-repeat;
+}
+.header_skin .list  .bgimg2{
+	background: url("images/header2.png?V=V6_1_2017-04-13") no-repeat;
+}
+.header_skin .list  .bgimg3{
+	background: url("images/header3.png?V=V6_1_2017-04-13") no-repeat;
+}
+.header_skin .list .bgcolor{
+	background:#0ff;
+	width:46px;
+	height:28px;
+	float:left;
+	margin-left:5px;
+	position: relative;
+}
+.header_skin .list .bgcolor1{
+	background: #f6ec79;
+}
+.header_skin .list .bgcolor2{
+	background: #3366ff;
+}
+.header_skin .list .bgcolor3{
+	background: #20507e;
+}
+.recommend_skin .description{
+	margin-top: 18px;
+}
+.recommend_skin #recommend1,.recommend_skin #recommend2,.recommend_skin #recommend3{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.recommend_skin .list{
+	display:block;
+	padding-left:5px;
+}
+.recommend_skin li.hoverFlag{
+	float: left;
+	width: 77px;
+	height: 70px;
+	overflow: hidden;
+	margin-left: 27px;
+	cursor: pointer;
+}
+.recommend_skin .item{
+	height:40px;
+	width:77px;
+	position: relative;
+}
+.recommend_skin li.current_skin .item{
+	border:3px solid #00cf78;
+	height:34px;
+	width:71px;
+	background-position: -3px -3px;
+}
+.recommend_skin .name{
+	height:30px;
+	line-height: 30px;
+	font-size: 12px;
+	vertical-align: middle;
+	color: #999;
+	text-align: center;
+}
+.recommend_skin .recommend1{
+	background: url("images/recommend1.png?V=V6_1_2017-04-13") no-repeat;
+}
+.recommend_skin .recommend2{
+	background: url("images/recommend2.png?V=V6_1_2017-04-13") no-repeat;
+}
+.recommend_skin .recommend3{
+	background: url("images/recommend3.png?V=V6_1_2017-04-13") no-repeat;
+}
+.modify_skin .list{
+	display:block;
+	height:80px;
+	margin-top: 3px;
+}
+.modify_skin .item{
+	display:block;
+	height:75px;
+	width:140px;
+	float:left;
+	text-align:center;
+	color:#b1b1b1;
+	font-size:12px;
+}
+.modify_skin .l_bg,.modify_skin .c_bg{
+	width:140px;
+	height:50px;
+	margin-bottom:8px;
+	position: relative;
+}
+.modify_skin .l_bg{
+	background:#009dd9;
+}
+.modify_skin .c_bg{
+	background:#bae6e7;
+}
+.bg_color_skin{
+	width:301px;
+	height:228px;
+	position:absolute;
+	-moz-box-shadow:2px 2px 4px #A8A8A8;
+	-webkit-box-shadow:2px 2px 4px #A8A8A8;
+	box-shadow:2px 2px 4px #A8A8A8;
+	background:#f7f7f7;
+	display:none;
+	border:1px #cccccc solid;
+	overflow: hidden;
+}
+.bg_color_skin .content{
+	margin-top:15px;
+	margin-left:15px;
+	width:270px;
+	height:210px;
+	overflow: hidden;
+}
+.bg_color_skin .list{
+	display:block;
+	height:137px;
+	background: #fff;
+}
+.bg_color_skin .list .colorItem{
+	float:left;
+	height:45px;
+	width:45px;
+	cursor:pointer;
+	position: relative;
+}
+.bg_color_skin .list .colorItem .ok{
+	position: absolute;
+	top:3px;
+	right:3px;
+	background: url("images/ok.png?V=V6_1_2017-04-13") no-repeat;
+	width: 15px;
+	height: 14px;
+	overflow: hidden;
+}
+.bg_color_skin .model_list{
+	display:block;
+	height:40px;
+	background: #fff;
+}
+.bg_color_skin .model_list .modelItem{
+	float:left;
+	height:20px;
+	width:13px;
+	cursor:pointer;
+}
+.bg_color_skin .model_list .currentMap{
+	height:30px;
+}
+
+
+/**消息提醒**/
+.margin_ico{
+	margin-bottom: 8px;
+}
+#message{
+	width:42px;
+	height:41px;
+	position:absolute;
+	right:15px;
+	bottom:40px;
+	background:url(images/index_message.png?V=V6_1_2017-04-13) no-repeat;
+	_background:url(images/index_message.gif?V=V6_1_2017-04-13) no-repeat;
+	z-index:200;
+	cursor:pointer;
+	-moz-border-top-left-radius: 1000px;
+	-khtml-border-top-left-radius: 1000px;
+	-webkit-border-top-left-radius: 1000px;
+	border-top-left-radius:1000px;
+}
+#message:hover {
+	background:url(images/index_message_hover.png?V=V6_1_2017-04-13) no-repeat;
+}
+.msg_icon{
+	display: inline-block;
+	width:24px;
+	height:21px;
+	background:url(images/index_msg_ico.png?V=V6_1_2017-04-13) no-repeat;
+	top: 11px;
+	left: 10px;
+	position:absolute;
+	/*opacity: 0.8; filter: alpha(opacity=80); *zoom: 1;*/
+}
+#messageIframe{
+	width:42px;
+	height:41px;
+	position:absolute;
+	right:15px;
+	bottom:40px;
+	z-index:199;
+	-moz-border-top-left-radius: 1000px;
+	-khtml-border-top-left-radius: 1000px;
+	-webkit-border-top-left-radius: 1000px;
+	border-top-left-radius:1000px;
+}
+.msg_font{
+	display:inline-block;
+	width:45px;
+	height:15px;
+	font-size:14px;
+	color:#fff;
+	position:absolute;
+	top:11px;
+	left:40px;
+	font-weight:bold;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+.msg_remind{
+	width:11px;
+	height:11px;
+	background:url(images/msg_remindIco.png?V=V6_1_2017-04-13) no-repeat;
+	display:inline-block;
+	position:absolute;
+	top:6px;
+	left:30px;
+}
+.pop_msg{
+	width:302px;
+	height:auto;
+	background:#fff;
+	padding:0 1px;
+	position:absolute;
+	right:15px;
+	z-index:999;
+	display:none;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	border-top: 6px solid #0088FF;
+}
+#pop_msg_iframe{
+	width:304px;
+	height:auto;
+	position:absolute;
+	right:15px;
+	bottom:0px;
+	z-index:998;
+	display:none;
+	-moz-box-shadow: 0px 0px 10px #333;
+	-webkit-box-shadow: 0px 0px 10px #333;
+	box-shadow: 0px 0px 10px #333;
+}
+.pop_msg_top{
+	width:302px;
+	height:38px;
+	overflow:hidden;
+	position:relative;
+}
+.pop_top_title{
+	width:120px;
+	height:20px;
+	text-align:left;
+	display:inline-block;
+	line-height:20px;
+	cursor:pointer;
+}
+.pop_msg_top_sm{
+	width:45px;
+	height:45px;
+	border-radius:50px;
+	-moz-border-radius:50px;
+	position:absolute;
+	right: 0;
+	top: 0;
+	cursor:pointer;
+}
+.pop_msg_top_sm span{
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+	position:absolute;
+	margin-top:0;
+	top: 12px;
+	left: 15px;
+	display:inline-block;
+	width:18px;
+	height:3px;
+	border-bottom: 2px solid #787878;
+}
+
+.msg_system_box{
+	width:300px;
+	height:auto;
+}
+.msg_system_box_main{
+	width:270px; /**减去40 padding**/
+	height:auto;
+	padding:8px 16px;
+	cursor:pointer;
+}
+.msg_system_ico{
+	width:24px;
+	height:24px;
+	float:left;
+	background:url(images/msg_ico1.png?V=V6_1_2017-04-13) no-repeat;
+}
+.msg_system_main_right{
+	width:230px;
+	height:auto;
+	float:left;
+	margin-left:10px;
+	color:#010101;
+	font-size:12px;
+}
+.msg_system_main_right_main{
+	width:230px;
+	height:auto;
+	/*max-height:65px;*/
+	position:relative;
+	overflow:hidden;
+	table-layout:fixed;
+	word-break: break-word;
+	word-wrap: normal;
+	overflow:hidden;
+	line-height: 18px;
+}
+.msg_system_main_right_info{
+	width:230px;
+	height:14px;
+	text-align:right;
+	color:#a3a3a3;
+	margin-top:5px;
+}
+.msg_date{
+	margin-left:15px;
+}
+.msg_system_main_right_name{
+	width:230px;
+	height:24px;
+	line-height:24px;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+	position:relative;
+}
+.msg_system_main_right_name span{
+	font-weight:bold;
+}
+.msg_system_main_right_title{
+	width:230px;
+	height:14px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+.msg_system_main_right_comment{
+	width:230px;
+	height:28px;
+	margin-top:5px;
+	color:#2e2d2d;
+	font-weight:bold;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.msg_line{
+	width:270px;
+	height:1px;
+	border-bottom:1px solid #d9d9d9;
+	margin-left:16px;
+}
+.msg_expansion{
+	text-align:center;
+	width:302px;
+	height:30px;
+	border-top:1px solid #d9d9d9;
+	background:#e9e9e9;
+	cursor:pointer;
+}
+.msg_expansion_font{
+	color:#010101;
+	font-size:12px;
+	height:16px;
+	line-height:16px;
+	margin-right:10px;
+}
+.msg_expansionIco{
+	margin-top:7px;
+}
+.msg_setting{
+	width:302px;
+	height:35px;
+	background:#d1d1d1;
+}
+.msg_setting_ucMsg{
+	width:280px;
+	height:35px;
+	border-top: 1px solid #ccc;
+}
+.msg_setting_ico{
+	width:24px;
+	height:24px;
+	background:url(images/msg_setting_ico.png?V=V6_1_2017-04-13) no-repeat;
+	margin:5px 70px 0 20px;
+	float:left;
+	cursor:pointer;
+}
+
+.msg_setting_uc{
+	float:left;
+	text-align:center;
+	color:#787878;
+	font-size:12px;
+	width:90px;
+	height:15px;
+	text-shadow:1px 1px 1px #fff;
+	cursor:pointer;
+}
+.msg_setting_open{
+	margin:10px 5px 0 5px;
+}
+.msg_setting_all,.msg_setting_see{
+	margin-top:10px;
+}
+.msg_setting_ignore{
+	margin-top:10px;
+	float:left;
+}
+.msg_setting_look{
+	margin-top:10px;
+	margin-right:20px;
+	float:right;
+	text-align:right;
+}
+.msg_expansion_box{
+	width:264px;
+	height:auto;
+	display:none;
+	overflow:hidden;
+	padding:7px 18px;
+}
+.msg_expansion_box_main{
+	width:113px;
+	height:25px;
+	line-height:25px;
+	color:#787878;
+	font-size:12px;
+	text-shadow:1px 1px 1px #fff;
+	cursor:pointer;
+	float:left;
+	margin-right:5px;
+	padding-left:10px;
+	position:relative;
+}
+.msg_expansion_box_main span{
+	font-size:12px;
+	color:#e54100;
+	font-weight:bold;
+	margin:0 5px;
+}
+.msg_ico_1{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_1.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:0px;
+	right:0px;
+	display:none;
+}
+.msg_ico_2{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_2.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:0px;
+	right:0px;
+	display:none;
+}
+.msg_ico_3{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_1.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:3px;
+	right:1px;
+	display:none;
+}
+.msg_ico_4{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_2.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:3px;
+	right:1px;
+	display:none;
+}
+
+.bottom_msg{
+	bottom:0;
+}
+.banner_line{
+	width:1px;
+	height:22px;
+	margin-top:17px;
+}
+.nav_top_style{
+	filter:alpha(opacity=100);
+	-moz-opacity:1.0;
+	opacity: 1.0;
+}
+.nav_top_style .space_item3, .nav_top_style .space_item4{
+	display:block;
+}
+.nav_center_current, .nav_top_current{
+}
+.clear{
+	clear:both;
+}
+
+/**UC消息 下拉列表**/
+.nav_uc_ico{
+	width:32px;
+	height:32px;
+	margin:9px 10px 0 5px;
+}
+.nav_uc_ico img{
+	-moz-border-radius: 21px;
+	-khtml-border-radius: 21px;
+	-webkit-border-radius: 21px;
+	border-radius: 21px;
+}
+.nav_uc_right{
+	width:160px;
+	height:auto;
+	font-size:12px;
+}
+.nav_uc_right_title{
+	width:70px;
+	height:14px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	color:#414141;
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+.nav_uc_right_main{
+	width:160px;
+	height:auto;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	color:#9d9d9c;
+	padding-bottom: 5px;
+}
+.nav_uc_num{
+	display: inline-block;
+	width: 30px;
+	height: 17px;
+	line-height: 17px;
+	vertical-align: middle;
+	-moz-binding: url("ellipsis.xml#ellipsis");
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size:12px;
+	float: right;
+	margin-right:10px;
+	background:#ff6633;
+	-moz-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	color:#fff;
+	text-align:center;
+	margin-top:16px;
+	margin-bottom:5px;
+}
+.uc_msg_ico_1{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_1.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:15px;
+	right:11px;
+	display:none;
+}
+.uc_msg_ico_2{
+	width:26px;
+	height:18px;
+	background:url(images/msg_sm_2.png?V=V6_1_2017-04-13);
+	position:absolute;
+	top:15px;
+	right:11px;
+	display:none;
+}
+.space_pop ul li.spaceStyle{
+	background:#a1daf4;
+	color:#111111;
+}
+
+/*--展开、折叠左侧菜单--*/
+.change_nav_left{
+	width:26px;
+	height:22px;
+	position:absolute;
+	text-align:right;
+	top:0px;
+	right:0px;
+	z-index:2;
+	cursor:pointer;
+	background-color: #eee;
+	background-color:rgba(0,0,0,0.1);
+}
+.change_nav_left:hover{
+	background-color: #ccc;
+	background: rgba(0,0,0,0.3);
+}
+.collapseIco,.expansionIco{
+	width:26px;
+	height:22px;
+	display: inline-block;
+	vertical-align: middle;
+	background:url("images/collapseIco.png?V=V6_1_2017-04-13") center center no-repeat;
+	zoom: 1;
+}
+/*--应用磁贴--*/
+.portal_shortcut_area .list_item {
+	position: relative;
+	float: left;
+	width: 61px;
+	height: 75px;
+	cursor: pointer;
+	margin-top:1px;
+	margin-right: 10px;
+}
+
+.portal_shortcut_area .img {
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	overflow: hidden;
+	width: 51px;
+	height: 51px;
+	border-radius: 50%;
+	border:solid 1px transparent;
+	transition:all .4s;
+}
+
+.portal_shortcut_area .list_item:hover .img{
+	border:solid 1px #fff;
+	box-shadow: 0 0 3px #666;
+}
+
+.portal_shortcut_area .img img {
+	margin-top: -8px;
+	margin-left: -5px;
+	width: 63px;
+	min-height: 63px;
+}
+
+.portal_shortcut_area .text {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 55px;
+	width: 61px;
+	font-size: 12px;
+	font-family: 'Microsoft YaHei';
+	text-align: center;
+	text-overflow: ellipsis;
+	word-break: keep-all;
+	white-space: nowrap;
+	line-height: 20px;
+}
+
+.portal_shortcut_area .number {
+	position: absolute;
+	top: -7px;
+	right: -5px;
+	display: block;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.portal_shortcut_area .number2 {
+	position: absolute;
+	top: -7px;
+	right: -5px;
+	display: block;
+	width: 28px;
+	height: 28px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.portal_shortcut_area .number_shadow {
+	position: absolute;
+	top: -7px;
+	right: -5px;
+	display: block;
+	width: 28px;
+	height: 28px;
+	border-radius: 30px;
+	box-shadow: 2px 2px 5px #000;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+}
+
+.portal_shortcut_area .portal_shortcut_box .tip_number1,.portal_shortcut_area .portal_shortcut_box .tip_number2,.portal_shortcut_area .portal_shortcut_box .tip_number3 {
+	position: absolute;
+	z-index: 2;
+	right: -3px;
+	top: -1px;
+	width: 22px;
+	height: 22px;
+	line-height: 24px;
+	text-align: center;
+	font-size: 12px;
+	color: #FFF;
+	font-family: "sans-serif";
+	background:#ff4848;
+	border-radius:50%;
+	border: solid 1px #fff;
+}
+/*菜单公共样式图标*/
+.menuIcon {
+    background-image: url(menuIcon/menuIcon-spritesheet.png?V=V6_1_2017-04-13);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.menuIcon-ALL-IN-ONE {
+    width: 24px;
+    height: 24px;
+    background-position: 0 0;
+}
+
+.menuIcon-HumanResources-png {
+    width: 24px;
+    height: 24px;
+    background-position: -24px 0;
+}
+
+.menuIcon-UC {
+    width: 24px;
+    height: 24px;
+    background-position: -48px 0;
+}
+
+.menuIcon-aboutA6 {
+    width: 24px;
+    height: 24px;
+    background-position: -72px 0;
+}
+
+.menuIcon-abouta6u8 {
+    width: 24px;
+    height: 24px;
+    background-position: -96px 0;
+}
+
+.menuIcon-abouta8 {
+    width: 24px;
+    height: 24px;
+    background-position: -120px 0;
+}
+
+.menuIcon-abouta8u8 {
+    width: 24px;
+    height: 24px;
+    background-position: -144px 0;
+}
+
+.menuIcon-accomplishedconferen {
+    width: 24px;
+    height: 24px;
+    background-position: -168px 0;
+}
+
+.menuIcon-accountdoc {
+    width: 24px;
+    height: 24px;
+    background-position: -192px 0;
+}
+
+.menuIcon-admin_top_index {
+    width: 24px;
+    height: 24px;
+    background-position: -216px 0;
+}
+
+.menuIcon-administratorconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -240px 0;
+}
+
+.menuIcon-agentnavtitle {
+    width: 24px;
+    height: 24px;
+    background-position: -264px 0;
+}
+
+.menuIcon-allinone {
+    width: 24px;
+    height: 24px;
+    background-position: -288px 0;
+}
+
+.menuIcon-allinonemessage {
+    width: 24px;
+    height: 24px;
+    background-position: -312px 0;
+}
+
+.menuIcon-allinoneoperator {
+    width: 24px;
+    height: 24px;
+    background-position: -336px 0;
+}
+
+.menuIcon-allinoneu8 {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -24px;
+}
+
+.menuIcon-applicationconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -24px;
+}
+
+.menuIcon-applog {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -24px;
+}
+
+.menuIcon-assetManage {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -24px;
+}
+
+.menuIcon-attendancemanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -24px;
+}
+
+.menuIcon-auditmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -24px;
+}
+
+.menuIcon-automanage {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -24px;
+}
+
+.menuIcon-b_menu_corporation {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -24px;
+}
+
+.menuIcon-b_menu_custom {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -24px;
+}
+
+.menuIcon-b_menu_department {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -24px;
+}
+
+.menuIcon-b_menu_group {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -24px;
+}
+
+.menuIcon-b_menu_leader {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -24px;
+}
+
+.menuIcon-b_menu_linksystem {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -24px;
+}
+
+.menuIcon-b_menu_outer {
+    width: 24px;
+    height: 24px;
+    background-position: -312px -24px;
+}
+.menu_one_cartravel{
+	background-position: -0px -406px;
+	width: 24px;
+	height: 24px;
+}
+.menuIcon-b_menu_personal {
+    width: 24px;
+    height: 24px;
+    background-position: -336px -24px;
+}
+
+.menuIcon-b_menu_personal_custom {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -48px;
+}
+
+.menuIcon-b_menu_public_custom {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -48px;
+}
+
+.menuIcon-b_menu_public_custom_group {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -48px;
+}
+
+.menuIcon-b_menu_relateproject {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -48px;
+}
+
+.menuIcon-b_menu_thridpartyspace {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -48px;
+}
+
+.menuIcon-basicconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -48px;
+}
+
+.menuIcon-bbs {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -48px;
+}
+
+.menuIcon-blog {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -48px;
+}
+
+.menuIcon-blogmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -48px;
+}
+
+.menuIcon-bookManagement {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -48px;
+}
+
+.menuIcon-bulletin {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -48px;
+}
+
+.menuIcon-busicapplicationconf {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -48px;
+}
+
+.menuIcon-busicapplicationconf0 {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -48px;
+}
+
+.menuIcon-businessconfiguratio {
+    width: 24px;
+    height: 24px;
+    background-position: -312px -48px;
+}
+
+.menuIcon-businessconfiguration {
+    width: 24px;
+    height: 24px;
+    background-position: -336px -48px;
+}
+
+.menuIcon-businesssolutionsgen {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -72px;
+}
+
+.menuIcon-calculator {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -72px;
+}
+
+.menuIcon-calendar {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -72px;
+}
+
+.menuIcon-collaboration {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -72px;
+}
+
+.menuIcon-collaboration360 {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -72px;
+}
+
+.menuIcon-collaborationcube {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -72px;
+}
+
+.menuIcon-collaborationcubeconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -72px;
+}
+
+.menuIcon-collaborationmonitor {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -72px;
+}
+
+.menuIcon-collaborationtemplate {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -72px;
+}
+
+.menuIcon-collaborationthemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -72px;
+}
+
+.menuIcon-coltemplatemanage {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -72px;
+}
+
+.menuIcon-common {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -96px;
+}
+
+.menuIcon-common_second_0 {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -72px;
+}
+
+.menuIcon-common_second_1 {
+    width: 24px;
+    height: 24px;
+    background-position: -312px -72px;
+}
+
+.menuIcon-common_second_2 {
+    width: 24px;
+    height: 24px;
+    background-position: -336px -72px;
+}
+
+.menuIcon-common_second_3 {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -96px;
+}
+
+.menuIcon-common_second_4 {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -96px;
+}
+
+.menuIcon-common_second_5 {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -96px;
+}
+
+.menuIcon-conference {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -96px;
+}
+
+.menuIcon-conferencearrangemen {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -96px;
+}
+
+.menuIcon-conferenceroom {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -96px;
+}
+
+.menuIcon-conferencethemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -96px;
+}
+
+.menuIcon-contacts {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -96px;
+}
+
+.menuIcon-corporation {
+    width: 28px;
+    height: 28px;
+    background-position: -192px -96px;
+}
+
+.menuIcon-cultureconstruction {
+    width: 24px;
+    height: 24px;
+    background-position: -220px -96px;
+}
+
+.menuIcon-custom {
+    width: 28px;
+    height: 28px;
+    background-position: -244px -96px;
+}
+
+.menuIcon-deeconsole {
+    width: 24px;
+    height: 24px;
+    background-position: -272px -96px;
+}
+
+.menuIcon-department {
+    width: 28px;
+    height: 28px;
+    background-position: -296px -96px;
+}
+
+.menuIcon-dept_management {
+    width: 24px;
+    height: 24px;
+    background-position: -324px -96px;
+}
+
+.menuIcon-docarchives {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -120px;
+}
+
+.menuIcon-doccenter {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -120px;
+}
+
+.menuIcon-docconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -120px;
+}
+
+.menuIcon-docdispatch {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -120px;
+}
+
+.menuIcon-docexchage {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -120px;
+}
+
+.menuIcon-doclibrarymanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -120px;
+}
+
+.menuIcon-docreceiving {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -120px;
+}
+
+.menuIcon-docsearch {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -120px;
+}
+
+.menuIcon-docstatistics {
+    width: 24px;
+    height: 24px;
+    background-position: -220px -120px;
+}
+
+.menuIcon-docsupervision {
+    width: 24px;
+    height: 24px;
+    background-position: -272px -120px;
+}
+
+.menuIcon-documentmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -324px -120px;
+}
+
+.menuIcon-doneevent {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -144px;
+}
+
+.menuIcon-edocdengji {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -144px;
+}
+
+.menuIcon-edocfawen {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -144px;
+}
+
+.menuIcon-edocqianbao {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -144px;
+}
+
+.menuIcon-elementarydata {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -144px;
+}
+
+.menuIcon-email {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -144px;
+}
+
+.menuIcon-employeearchives {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -144px;
+}
+
+.menuIcon-favoritelinks {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -144px;
+}
+
+.menuIcon-formcolumnconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -144px;
+}
+
+.menuIcon-formengine {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -144px;
+}
+
+.menuIcon-formquery {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -144px;
+}
+
+.menuIcon-formstatistics {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -144px;
+}
+
+.menuIcon-formthemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -144px;
+}
+
+.menuIcon-group {
+    width: 28px;
+    height: 28px;
+    background-position: -312px -144px;
+}
+
+.menuIcon-groupapplicationconf {
+    width: 24px;
+    height: 24px;
+    background-position: -340px -144px;
+}
+
+.menuIcon-grouporganizationman {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -168px;
+}
+
+.menuIcon-groupwoucherset {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -168px;
+}
+
+.menuIcon-guestBook {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -168px;
+}
+
+.menuIcon-help {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -168px;
+}
+
+.menuIcon-humanResources {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -168px;
+}
+
+.menuIcon-icon {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -168px;
+}
+
+.menuIcon-identitymanangement {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -168px;
+}
+
+.menuIcon-inbox {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -168px;
+}
+
+.menuIcon-info {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -168px;
+}
+
+.menuIcon-infoaudit {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -168px;
+}
+
+.menuIcon-infomanager {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -168px;
+}
+
+.menuIcon-inforeport {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -168px;
+}
+
+.menuIcon-informationform {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -168px;
+}
+
+.menuIcon-informationintegrati {
+    width: 24px;
+    height: 24px;
+    background-position: -340px -168px;
+}
+
+.menuIcon-infostat {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -192px;
+}
+
+.menuIcon-itemsetting {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -192px;
+}
+
+.menuIcon-kmsquare {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -192px;
+}
+
+.menuIcon-knowledgecommunity {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -192px;
+}
+
+.menuIcon-leader {
+    width: 28px;
+    height: 28px;
+    background-position: -312px -172px;
+}
+
+.menuIcon-linksystem {
+    width: 28px;
+    height: 28px;
+    background-position: -96px -200px;
+}
+
+.menuIcon-m1management {
+    width: 24px;
+    height: 24px;
+    background-position: -124px -192px;
+}
+
+.menuIcon-magzineaudit {
+    width: 24px;
+    height: 24px;
+    background-position: -148px -192px;
+}
+
+.menuIcon-magzinebrowse {
+    width: 24px;
+    height: 24px;
+    background-position: -172px -192px;
+}
+
+.menuIcon-managementbyobjectiv {
+    width: 24px;
+    height: 24px;
+    background-position: -196px -192px;
+}
+
+.menuIcon-managementbyobjectiv_a6 {
+    width: 23px;
+    height: 24px;
+    background-position: -220px -192px;
+}
+
+.menuIcon-menu_corporation {
+    width: 24px;
+    height: 24px;
+    background-position: -243px -192px;
+}
+
+.menuIcon-menu_custom {
+    width: 24px;
+    height: 24px;
+    background-position: -267px -192px;
+}
+
+.menuIcon-menu_department {
+    width: 24px;
+    height: 24px;
+    background-position: -340px -192px;
+}
+
+.menuIcon-menu_group {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -216px;
+}
+
+.menuIcon-menu_leader {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -216px;
+}
+
+.menuIcon-menu_linksystem {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -216px;
+}
+
+.menuIcon-menu_outer {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -216px;
+}
+
+.menuIcon-menu_personal {
+    width: 24px;
+    height: 24px;
+    background-position: -124px -216px;
+}
+
+.menuIcon-menu_personal_custom {
+    width: 24px;
+    height: 24px;
+    background-position: -148px -216px;
+}
+
+.menuIcon-menu_public_custom {
+    width: 24px;
+    height: 24px;
+    background-position: -172px -216px;
+}
+
+.menuIcon-menu_public_custom_group {
+    width: 24px;
+    height: 24px;
+    background-position: -196px -216px;
+}
+
+.menuIcon-menu_relateproject {
+    width: 24px;
+    height: 24px;
+    background-position: -220px -216px;
+}
+
+.menuIcon-menu_thridpartyspace {
+    width: 24px;
+    height: 24px;
+    background-position: -244px -216px;
+}
+
+.menuIcon-menumanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -268px -216px;
+}
+
+.menuIcon-messagemodelsetting {
+    width: 24px;
+    height: 24px;
+    background-position: -292px -216px;
+}
+
+.menuIcon-metadata {
+    width: 24px;
+    height: 24px;
+    background-position: -316px -216px;
+}
+
+.menuIcon-monitorthemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -340px -216px;
+}
+
+.menuIcon-moresectionicon {
+    width: 28px;
+    height: 28px;
+    background-position: 0 -240px;
+}
+
+.menuIcon-mosectionicon {
+    width: 36px;
+    height: 36px;
+    background-position: -28px -240px;
+}
+
+.menuIcon-mydocument {
+    width: 24px;
+    height: 24px;
+    background-position: -64px -240px;
+}
+
+.menuIcon-nav_second_ico {
+    width: 24px;
+    height: 24px;
+    background-position: -88px -240px;
+}
+
+.menuIcon-ncinteconf {
+    width: 24px;
+    height: 24px;
+    background-position: -112px -240px;
+}
+
+.menuIcon-ncorganizationssynch {
+    width: 24px;
+    height: 24px;
+    background-position: -136px -240px;
+}
+
+.menuIcon-ncvoucherdefine {
+    width: 24px;
+    height: 24px;
+    background-position: -160px -240px;
+}
+
+.menuIcon-newaffair {
+    width: 24px;
+    height: 24px;
+    background-position: -184px -240px;
+}
+
+.menuIcon-newcollaboration {
+    width: 24px;
+    height: 24px;
+    background-position: -208px -240px;
+}
+
+.menuIcon-newconference {
+    width: 24px;
+    height: 24px;
+    background-position: -232px -240px;
+}
+
+.menuIcon-newelementarydata {
+    width: 24px;
+    height: 24px;
+    background-position: -256px -240px;
+}
+
+.menuIcon-newemail {
+    width: 24px;
+    height: 24px;
+    background-position: -280px -240px;
+}
+
+.menuIcon-newinformationform {
+    width: 24px;
+    height: 24px;
+    background-position: -304px -240px;
+}
+
+.menuIcon-newplan {
+    width: 24px;
+    height: 24px;
+    background-position: -328px -240px;
+}
+
+.menuIcon-newplanform {
+    width: 24px;
+    height: 24px;
+    background-position: -64px -264px;
+}
+
+.menuIcon-news {
+    width: 24px;
+    height: 24px;
+    background-position: -88px -264px;
+}
+
+.menuIcon-newworkflowform {
+    width: 24px;
+    height: 24px;
+    background-position: -112px -264px;
+}
+
+.menuIcon-notepad {
+    width: 24px;
+    height: 24px;
+    background-position: -136px -264px;
+}
+
+.menuIcon-objectivethemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -160px -264px;
+}
+
+.menuIcon-officialdocument {
+    width: 24px;
+    height: 24px;
+    background-position: -184px -264px;
+}
+
+.menuIcon-officthemespace {
+    width: 24px;
+    height: 24px;
+    background-position: -208px -264px;
+}
+
+.menuIcon-orgmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -232px -264px;
+}
+
+.menuIcon-outer {
+    width: 28px;
+    height: 28px;
+    background-position: -256px -264px;
+}
+
+.menuIcon-perfomanceanalysisconfig {
+    width: 24px;
+    height: 24px;
+    background-position: -284px -264px;
+}
+
+.menuIcon-performancequery {
+    width: 24px;
+    height: 24px;
+    background-position: -308px -264px;
+}
+
+.menuIcon-performcenter {
+    width: 24px;
+    height: 24px;
+    background-position: -332px -264px;
+}
+
+.menuIcon-personal {
+    width: 28px;
+    height: 28px;
+    background-position: 0 -288px;
+}
+
+.menuIcon-personal_custom {
+    width: 28px;
+    height: 28px;
+    background-position: -28px -288px;
+}
+
+.menuIcon-personalkmcenter {
+    width: 24px;
+    height: 24px;
+    background-position: -56px -288px;
+}
+
+.menuIcon-personaltools {
+    width: 24px;
+    height: 24px;
+    background-position: -80px -288px;
+}
+
+.menuIcon-personnelmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -104px -288px;
+}
+
+.menuIcon-professionmap {
+    width: 24px;
+    height: 24px;
+    background-position: -128px -288px;
+}
+
+.menuIcon-projectdocument {
+    width: 24px;
+    height: 24px;
+    background-position: -152px -288px;
+}
+
+.menuIcon-public_custom {
+    width: 28px;
+    height: 28px;
+    background-position: -176px -288px;
+}
+
+.menuIcon-public_custom_group {
+    width: 28px;
+    height: 28px;
+    background-position: -204px -288px;
+}
+
+.menuIcon-related {
+    width: 24px;
+    height: 24px;
+    background-position: -232px -288px;
+}
+
+.menuIcon-relatedDefine {
+    width: 24px;
+    height: 24px;
+    background-position: -284px -288px;
+}
+
+.menuIcon-relatedproject {
+    width: 24px;
+    height: 24px;
+    background-position: -308px -288px;
+}
+
+.menuIcon-relateproject {
+    width: 32px;
+    height: 32px;
+    background-position: -332px -288px;
+}
+
+.menuIcon-reportconfig {
+    width: 24px;
+    height: 22px;
+    background-position: 0 -320px;
+}
+
+.menuIcon-reportshowindex {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -320px;
+}
+
+.menuIcon-rsssubscription {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -320px;
+}
+
+.menuIcon-runningnumber {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -320px;
+}
+
+.menuIcon-salary {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -320px;
+}
+
+.menuIcon-sapplugin {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -320px;
+}
+
+.menuIcon-schedule {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -320px;
+}
+
+.menuIcon-scheduledconference {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -320px;
+}
+
+.menuIcon-scheduleplan {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -320px;
+}
+
+.menuIcon-searchengine {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -320px;
+}
+
+.menuIcon-seeyonreport {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -320px;
+}
+
+.menuIcon-sentevent {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -320px;
+}
+
+.menuIcon-service {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -320px;
+}
+
+.menuIcon-shortcut {
+    width: 24px;
+    height: 24px;
+    background-position: -312px -320px;
+}
+
+.menuIcon-signreceipt {
+    width: 24px;
+    height: 24px;
+    background-position: -336px -320px;
+}
+
+.menuIcon-statistics {
+    width: 24px;
+    height: 24px;
+    background-position: -360px 0;
+}
+
+.menuIcon-stockAdmin {
+    width: 24px;
+    height: 24px;
+    background-position: -360px -24px;
+}
+
+.menuIcon-supervisoryevent {
+    width: 24px;
+    height: 24px;
+    background-position: -360px -48px;
+}
+
+.menuIcon-survey {
+    width: 24px;
+    height: 24px;
+    background-position: -360px -72px;
+}
+
+.menuIcon-systemmaintenance {
+    width: 24px;
+    height: 24px;
+    background-position: -348px -96px;
+}
+
+.menuIcon-systemmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -348px -120px;
+}
+
+.menuIcon-systemparameters {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -144px;
+}
+
+.menuIcon-teammanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -168px;
+}
+
+.menuIcon-thirdperformance {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -192px;
+}
+
+.menuIcon-thridpartyspace {
+    width: 28px;
+    height: 28px;
+    background-position: -356px -240px;
+}
+
+.menuIcon-todoevent {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -216px;
+}
+
+.menuIcon-u8attendanceapply {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -268px;
+}
+
+.menuIcon-u8attendancequery {
+    width: 24px;
+    height: 24px;
+    background-position: -256px -292px;
+}
+
+.menuIcon-u8integrated {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -292px;
+}
+
+.menuIcon-u8loginsetting {
+    width: 24px;
+    height: 24px;
+    background-position: -364px -316px;
+}
+
+.menuIcon-u8setting {
+    width: 24px;
+    height: 24px;
+    background-position: -360px -340px;
+}
+
+.menuIcon-u8wagequery {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -364px;
+}
+
+.menuIcon-u8web {
+    width: 24px;
+    height: 24px;
+    background-position: -24px -364px;
+}
+
+.menuIcon-unitmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -48px -364px;
+}
+
+.menuIcon-unitmanagement_b {
+    width: 24px;
+    height: 24px;
+    background-position: -72px -364px;
+}
+
+.menuIcon-unsentEvent {
+    width: 24px;
+    height: 24px;
+    background-position: -96px -364px;
+}
+
+.menuIcon-userwoucher {
+    width: 24px;
+    height: 24px;
+    background-position: -120px -364px;
+}
+
+.menuIcon-vouchergenerate {
+    width: 24px;
+    height: 24px;
+    background-position: -144px -364px;
+}
+
+.menuIcon-workdaysetting {
+    width: 24px;
+    height: 24px;
+    background-position: -168px -364px;
+}
+
+.menuIcon-workingaffair {
+    width: 24px;
+    height: 24px;
+    background-position: -192px -364px;
+}
+
+.menuIcon-workingmanagement {
+    width: 24px;
+    height: 24px;
+    background-position: -216px -364px;
+}
+
+.menuIcon-workingplan {
+    width: 24px;
+    height: 24px;
+    background-position: -240px -364px;
+}
+
+.menuIcon-workingtask {
+    width: 24px;
+    height: 24px;
+    background-position: -264px -364px;
+}
+
+.menuIcon-workstatistics {
+    width: 24px;
+    height: 24px;
+    background-position: -288px -364px;
+}
+.menuIcon-show {
+    width: 24px;
+    height: 24px;
+    background-position: -312px -364px;
+}
+.menuIcon-wfanalysis{
+	width: 24px;
+    height: 24px;
+    background-position: 0 -388px;
+}
+.menuIcon-personalbehavioranalysis{
+	width: 24px;
+    height: 24px;
+    background-position: -24px -388px;
+}
+.menuIcon-orgbehavioranalysis{
+	width: 24px;
+    height: 24px;
+    background-position: -48px -388px;
+}
+.menuIcon-callcar{
+	width: 24px;
+    height: 24px;
+    background-position: -72px -388px;
+}
+.menuIcon-cardeptmoneymgr{
+	width: 24px;
+    height: 24px;
+    background-position: -96px -388px;
+}
+.menuIcon-corpinfor{
+	width: 24px;
+    height: 24px;
+    background-position: -120px -388px;
+}
+.menuIcon-ordermanage{
+	width: 24px;
+    height: 24px;
+    background-position: -144px -388px;
+}
+.menuIcon-authormanage{
+	width: 24px;
+    height: 24px;
+    background-position: -168px -388px;
+}
+.menuIcon-neigoucorpinfor{
+	width:24px;
+	height:24px;
+	background-position: -192px -388px;
+}
+.menuIcon-neigousso{
+	width:24px;
+	height:24px;
+	background-position: -216px -388px;
+}
+.menuIcon-neigoupoint{
+	width:24px;
+	height:24px;
+	background-position: -240px -388px;
+}
+.menuIcon-neigouledger{
+	width:24px;
+	height:24px;
+	background-position: -264px -388px;
+}
+.menuIcon-mycollection{
+	width:24px;
+	height:24px;
+	background-position: -288px -388px;
+}
+.menuIcon-newmobiledashboard{
+	width:24px;
+	height:24px;
+	background-position: -312px -388px;
+}
+.menuIcon-routechart{
+	width:24px;
+	height:24px;
+	background-position: -360px -388px;
+}
+.menuIcon-conferenceCallControl {
+    width: 24px;
+    height: 24px;
+    background-position: -336px -364px;
+}
+.vst_state {
+    top: 18px;
+    left:0px;
+    text-align: left;
+}
+.seach_icon_button{
+	width:90px;
+	height: 37px;
+	text-align: center;
+	line-height: 37px;
+	overflow: hidden;
+	font-size: 16px;
+	font-style: normal;
+	color: #fff;
+	position: absolute;
+	top: 23px;
+	right: 158px;
+	background:#42b3e5;
+	border:1px solid #fcfcfc;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/*--整合一些公共的css--*/
+.text_overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: keep-all;
+	white-space: nowrap;
+}
+/**面包屑**/
+.nowLocation_content a {
+	color: #fff;
+}
+.nowLocation_content a:hover {
+	color: #fff;
+}
+/* 消息显示css*/
+.msg_main_box {
+	width: 100%;
+	font-size: 1px;
+	max-height: 280px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	*overflow-y: auto;
+	_overflow-y:auto;
+	position: relative;
+}
+.msg_main_box:hover {
+	overflow-y: auto;
+}
+/* 消息小三角 */
+.msg_pop_titlecurrent {
+	color: #fff;
+	font-size: 36px;
+	position: absolute;
+	top: 21px;
+	*top: 23px;
+	left: 37px;
+	overflow: hidden;
+}
+/*搜索*/
+.searchArea {
+	background: #f1f1f1;
+	width: 595px;
+	height: 90px;
+	position: absolute;
+	top: 50px;
+	right: 30px;
+	border: 1px #cccccc solid;
+	text-align: left;
+	z-index: 900;
+	display: none;
+	-moz-box-shadow: 0px 0px 20px  #333;
+	-webkit-box-shadow: 0px 0px 20px  #333;
+	box-shadow: 0px 0px 20px  #333;
+}
+
+.searchAreaIframe {
+	width: 597px;
+	height: 92px;
+	position: absolute;
+	top: 50px;
+	right: 30px;
+	z-index: 899;
+	display: none;
+	background: #f1f1f1;
+	border: 0;
+}
+
+input[type="text"].searchAreaInput {
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	width: 275px;
+	margin: 24px 0 0 42px;
+	padding: 0 10px;
+	color: #333333;
+	vertical-align: middle;
+}
+
+.searchAreaA {
+	width: 90px;
+	height: 37px;
+	text-align: center;
+	line-height: 37px;
+	overflow: hidden;
+	font-size: 16px;
+	font-style: normal;
+	color: #fff;
+	position: absolute;
+	top: 23px;
+	right: 51px;
+	background: #a6a6a6;
+	border: 1px solid #fcfcfc;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.searchAreaA:hover {
+	color: #fff;
+}
+/* 首页导航*/
+.setting_ico,.setting_ico:hover {
+	width: 24px;
+	height: 24px;
+	margin: 0 5px;
+	/*width: 40px;*/
+}
+
+.help_ioc,.help_ioc:hover {
+	width: 24px;
+	height: 24px;
+	margin: 0 5px;
+}
+
+.dajia_work_ico,.dajia_work_ico:hover {
+	width: 24px;
+	height: 24px;
+	margin: 0 5px;
+}
+
+.return_ioc2,.return_ioc2:hover {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+}
+
+.return_ioc,.return_ioc:hover {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+}
+/* 导航下拉发光阴影*/
+.space_pop {
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 50px;
+	right: 280px;
+	z-index: 9999;
+	background: #fff;
+	display: none;
+	 border:1px #5191d1 solid;
+	-moz-box-shadow:0px 2px 8px rgba( 0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 8px rgba( 0, 0, 0, 0.3);
+	box-shadow: 0px 2px 8px rgba( 0, 0, 0, 0.3);
+	font-size: 14px;
+	padding: 4px 3px;
+	border-bottom: 4px solid #42b3e5;
+	font-size: 14px;
+}
+/* 消息盒子 */
+.msg_setting_font {
+	color: #111111;
+	font-size: 12px;
+	width: 70px;
+	height: 15px;
+	text-shadow: 1px 1px 1px #fff;
+	cursor: pointer;
+}
+/*换肤面板tab*/
+.skin_content_tabs {
+	background: #0484be;
+	height: 190px;
+	padding-top: 4px;
+}
+.skin_content_tabs_ul{
+	width: 300px;
+	margin: 0 auto;
+}
+.skin_content_tabs li {
+	display: block;
+	width: 65px;
+	height: 76px;
+	text-align: center;
+	overflow: hidden;
+	margin:14px 0 0 10px;
+	float: left;
+	overflow: hidden;
+}
+.skin_content_tabs li span{
+	display: block;
+	width: 34px;
+	height: 26px;
+	background-repeat:no-repeat;
+	background-position:15px 10px;
+	background-color:#0477ab;
+	padding:10px 15px;
+	margin: 0 auto;
+	border-radius: 3px;
+}
+.skin_content_tabs li strong{
+	line-height: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: 12px;
+	font-weight:normal;
+}
+.skin_content_tabs li a {
+	display: block;
+	width: 100%;
+	font-size: 12px;
+	color:#b8d3e6;
+}
+.skin_content_tabs li a.current {
+	color: #fff;
+}
+.skin_content_tabs li a.current span{
+	background-color:#024f72;
+}
+.skin_content_tabs li:hover strong{
+	color: #fff;
+}
+.skin_content_tabs li:hover span{
+	background-color:#024f72;
+}
+.skin_content_tabs li a.skinSwitchDisabled {
+	color: #0061a5;
+	cursor: default;
+}
+.skin_content_tabs li:hover a.skinSwitchDisabled strong{
+	color: #0061a5;
+}
+.skin_content_tabs li:hover a.skinSwitchDisabled span{
+	background-color:#0477ab;
+}
+
+.skin_content_tabs_lr {
+	padding: 0 25px;
+}
+
+.skin_content_tabs_tb {
+	padding: 0 25px;
+}
+.layout_pat_1{
+	background-image: url(images/layout_pat_1.png?V=V6_1_2017-04-13);
+}
+.layout_pat_2{
+	background-image: url(images/layout_pat_2.png?V=V6_1_2017-04-13);
+}
+.layout_pat_3{
+	background-image: url(images/layout_pat_3.png?V=V6_1_2017-04-13);
+}
+.layout_pat_4{
+	background-image: url(images/layout_pat_4.png?V=V6_1_2017-04-13);
+}
+.layout_pat_5{
+	background-image: url(images/layout_pat_5.png?V=V6_1_2017-04-13);
+}
+.layout_pat_6{
+	background-image: url(images/layout_pat_6.png?V=V6_1_2017-04-13);
+}
+.layout_pat_7{
+	background-image: url(images/layout_pat_7.png?V=V6_1_2017-04-13);
+}
+/*换肤面板tab - 后台*/
+.skin_admin_content_tabs {
+}
+
+.skin_admin_content_tabs a {
+	float: left;
+	display: inline-block;
+	margin-right: 20px;
+	width: 200px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 14px;
+	color: #ffffff;
+	background: #b7e0f3;
+}
+
+.skin_admin_content_tabs a.current {
+	background: #0484be;
+	color: #000;
+}
+
+.skin_admin_content_tabs a.skinSwitchDisabled {
+	color: #ececec;
+	background: #bcbcbc;
+}
+.to_gray {
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+	-webkit-filter: grayscale(1);
+}
+/*--正文区域--*/
+.layout_location{margin-top:10px; position: relative;}
+.nowLocation_content {
+	display: block;
+	line-height: 28px;
+	height: 28px;
+	padding:0 30px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top:0;
+	white-space:nowrap;
+}
+.layout_location_designer{margin-top:10px; position: relative;}
+.layout_location_designer{margin-top:10px;}
+
+/*--简练B，时尚B，极简版菜单--*/
+.spaceMenu_current_nav{background-color: #4f8fcf;color:#fff}
+.spaceMenu_current_nav .secondNavTitle,.spaceMenu_current_nav.secondNavTitle{color:#fff;}
+
+/*--栏目由3个放开至10个后，由于栏目头部宽度不足，导致显示下拉显示的栏目--*/
+.index_tabs_left{
+	float: left;
+}
+.index_tabs_left span {
+	display: inline-block;
+	vertical-align: top;
+}
+.index_tabs_more{
+	width: 16px;
+	height:40px;
+	float: left;
+	/*z-index: 1;*/
+	position:relative;
+	margin-left: 5px;
+}
+.index_tabs_more_arrow{
+	width:16px;
+	height: 16px;
+	position: absolute;
+	border:solid 1px #ccc;
+	right:0;
+	bottom:11px;
+	z-index: 1;
+	cursor: pointer;
+}
+.index_tabs_more_list{
+	background-color: #fff;
+	position: absolute;
+	top:28px;
+	right: 0;
+	border:solid 1px #ccc;
+	z-index: 2;
+	display: none;
+}
+.index_tabs_more_list li{
+	height: 39px;
+	padding:0 10px;
+}
+.index_tabs_more_list li:hover,.index_tabs_more_list li.current{
+	color: #fff;
+	background-color: #42b3e5;
+}
+.index_tabs_more_list li a{
+	width: 100px;
+	height: 39px;
+	line-height: 39px;
+	display: block;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.index_tabs_more_list li:hover a span,.index_tabs_more_list li.current a span{
+	color: #fff;
+}
+.index_tabs_shadow{
+	-moz-box-shadow: 3px 3px 8px #bcbcbc;
+	-webkit-box-shadow: 3px 3px 8px #bcbcbc;
+	box-shadow: 3px 3px 8px #bcbcbc;
+}

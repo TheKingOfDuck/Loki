@@ -1,0 +1,874 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+
+
+
+
+
+
+<link href="/seeyon/common/images/A8/favicon.ico?V=V6_1SP2_2018-11-07_476221043" type="image/x-icon" rel="icon"/>
+<link rel="stylesheet" href="/seeyon/common/all-min.css?V=V6_1SP2_2018-11-07_476221043">
+
+
+    <link rel="stylesheet" href="/seeyon/skin/default/skin.css?V=V6_1SP2_2018-11-07_476221043">
+
+<link rel="stylesheet" href="/seeyon/common/css/peoplecard.css?V=V6_1SP2_2018-11-07_476221043">
+<link rel="stylesheet" type="text/css"  href="/seeyon/common/css/dd.css?V=V6_1SP2_2018-11-07_476221043">
+<link rel="stylesheet" type="text/css"  href="/seeyon/main/skin/frame/default/default_common.css?V=V6_1SP2_2018-11-07_476221043">
+<link rel="stylesheet" id="mainSkinCss" type="text/css"  href="">
+<link rel="stylesheet" href="/seeyon/common/image/css/touchTouch.css?V=V6_1SP2_2018-11-07_476221043">
+<link href="/seeyon/common/css/select2.css?V=V6_1SP2_2018-11-07_476221043" type="text/css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'https://oa.gdgm.cn:443/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = '566534228DEAAD3A7A933C4F933D6027',_isModalDialog = false;
+  var _editionI18nSuffix = '';
+  
+  var _resourceCode = "";
+  var seeyonProductId="1";
+  var systemfileUploadmaxsize="10485760";
+</script>
+
+<script type="text/javascript" src="/seeyon/i18n_zh_CN.js?V=V6_1SP2_2018-11-07_476221043"></script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="/seeyon/common/all-min.js?V=V6_1SP2_2018-11-07_476221043"></script>
+
+<script type="text/javascript" src="/seeyon/common/js/ui/calendar/calendar-zh_CN.js?V=V6_1SP2_2018-11-07_476221043"></script>
+
+<script type="text/javascript" src="/seeyon/main.do?method=headerjs&login=0"></script>
+<script type="text/javascript">
+
+var addinMenus = new Array();
+
+
+$.ctx._currentPathId = 'main_index';
+$.ctx._pageSize = 20;
+
+$.ctx._emailShow = true; 
+$.ctx.fillmaps = null;
+$.releaseOnunload();
+</script>
+<script type="text/javascript" src="/seeyon/ajaxStub.js?v=1611134203744"></script>
+<script type="text/javascript" src="/seeyon/common/image/jquery.touchTouch-debug.js?V=V6_1SP2_2018-11-07_476221043"></script>
+
+
+
+
+
+<script type="text/javascript" src="/seeyon/main/common/js/jquery.qrcode.min.js?V=V6_1SP2_2018-11-07_476221043"></script>
+<script type="text/javascript" src="/seeyon/main/common/js/qrcode-uuid.js?V=V6_1SP2_2018-11-07_476221043"></script>
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache" /> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate" /> 
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT" /> 
+<META HTTP-EQUIV="expires" CONTENT="0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+
+	var interval;
+	var sendFlag = false;
+		
+	var ajaxWeixinLoginManager = new weixinLoginManager();
+	function loginForWechat(){
+		var random = $("#random").val();
+		ajaxWeixinLoginManager.isLogin(random,{
+			success : function(data) {
+				if(data != "loginError" || data == null){
+					$("#login_username").val(data);
+					//$("#login_password").val("123456");
+					$("#login_button").click();
+				} else {
+					sendFlag = true;
+				}
+			}
+		});
+	}
+
+	//轮询请求，防止后台阻塞
+	function intervalLogin(){
+		if(sendFlag){
+			sendFlag = false;
+			loginForWechat();
+		}
+	}
+
+	//二维码登陆
+	function changeLoginMode () {
+		$(".pwdBtn").click(function () {
+			clearInterval(interval);
+			$(this).hide();
+			$(".qrCode_area").hide();
+			$(".login_top").show();
+			$(".qrCodeBtn").show();
+			$(".pwd_area").show();
+			$("#qrcode1 .qrcode").empty();
+		});
+		$(".qrCodeBtn").click(function () {
+			$("#login_error").hide();
+			$(this).hide();
+			$(".pwd_area").hide();
+			$(".login_top").hide();
+			$(".pwdBtn").show();
+			$(".qrCode_area").show();
+			var date = new Date();
+			var dateNumber = date.getTime();
+			var random="seeyon-" + Math.uuid() + "-" + dateNumber;
+			var qrcodeRandom = "https://weixin.seeyon.com/mobilehelp.jsp?random=" + random;
+			$("#random").val(random);
+			//table方式进行图片渲染
+      if(typeof(isA6sLoginPage)=="undefined"){
+        $("#qrcode1 .qrcode").qrcode({
+          render: "table", //table方式
+          width: 57, //宽度
+          height: 57, //高度
+          text: utf16to8(qrcodeRandom) //任意内容
+        });
+      }else{
+        $("#qrcode1 .qrcode").qrcode({
+          render: "table", //table方式
+          width: 114, //宽度
+          height: 114, //高度
+          text: utf16to8(qrcodeRandom) //任意内容
+        });
+      };
+			
+			//canvas方式进行图片渲染
+			//$("#qrcode .qrcode").qrcode(utf16to8(qrcodeRandom));
+			loginForWechat();
+			interval = setInterval("intervalLogin()", 1000);
+		});
+		$("#flashQrcode").click(function(){
+			$("#qrcode1 .qrcode").empty();
+			var date = new Date();
+			var dateNumber = date.getTime();
+			var random="seeyon-" + Math.uuid() + "-" + dateNumber;
+			var qrcodeRandom = "https://weixin.seeyon.com/mobilehelp.jsp?random=" + random;
+			$("#random").val(random);
+			//table方式进行图片渲染
+			if(typeof(isA6sLoginPage)=="undefined"){
+        $("#qrcode1 .qrcode").qrcode({
+          render: "table", //table方式
+          width: 57, //宽度
+          height: 57, //高度
+          text: utf16to8(qrcodeRandom) //任意内容
+        });
+      }else{
+        $("#qrcode1 .qrcode").qrcode({
+          render: "table", //table方式
+          width: 114, //宽度
+          height: 114, //高度
+          text: utf16to8(qrcodeRandom) //任意内容
+        });
+      };
+			//canvas方式进行图片渲染
+			//$("#qrcode .qrcode").qrcode(utf16to8(qrcodeRandom));
+		});
+	}
+	
+	//识别中文，暂时未用，目前随机数不包含中文
+	function utf16to8(str) {
+        var out, i, len, c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }
+
+	//NC Portal
+	try{
+		if(parent.frame_A8){
+			if("false" == "true"){		
+			   var ncPortalUrl = "";
+			   var ncUrl= "http://128.2.2.213:800";
+			   if(ncPortalUrl!=null&&ncPortalUrl!=''){
+			      window.location.href = ncPortalUrl+"/portal/logoutA8.jsp";
+			   }else{
+			     window.location.href = ncUrl+"/portal/logoutA8.jsp";
+			   }
+			}	
+		}
+	}catch(e){}
+	
+  $.ctx.template = {"cdefault":"0","description":"登录页模板三","extraMap":{},"id":"3398943773760440213","name":"登录页模板三","new":false,"path":"default/login.jsp","preset":"1","sort":"3","thumbnail":"default/thumbnail3.png","updateTime":"2018-03-18 00:00:00","updateUser":"-884316703172445"};
+  $.ctx.hotSpots = [{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"bgialign","hotspotvalue":"zoom","id":"-1588055738180680970","module":"0","name":"hotspot.name.bgialign","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"showQr","hotspotvalue":"1","id":"-3539521616269325798","module":"0","name":"hotspot.name.showQr","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"loginboxposition","hotspotvalue":"0%,0","id":"6676208916771717759","module":"0","name":"hotspot.name.loginboxposition","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"shownumber","hotspotvalue":"show","id":"5012875665720821815","module":"0","name":"hotspot.name.shownumber","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"20","extraMap":{},"hotspotkey":"loginboxmainbgc","hotspotvalue":"#000000","id":"-2715741453157514598","module":"0","name":"hotspot.name.loginboxmainbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"0","extraMap":{},"hotspotkey":"loginboxbottombgc","hotspotvalue":"#ffffff","id":"4866745608172227510","module":"0","name":"hotspot.name.loginboxbottombgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"100","extraMap":{},"hotspotkey":"loginboxbuttonbgc","hotspotvalue":"#38c64e","id":"4273345614984203930","module":"0","name":"hotspot.name.loginboxbuttonbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"layout","hotspotvalue":"l_r","id":"6587136008054983476","module":"0","name":"hotspot.name.layout","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"note","hotspotvalue":"hotspot.name.note.value","id":"-6215797936694212517","module":"0","name":"hotspot.name.note","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"newfeature","hotspotvalue":"show","id":"-2548474319026958401","module":"0","name":"hotspot.name.newfeature","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"topbgi","id":"-4685017448782476921","module":"0","name":"hotspot.name.topbgi","new":false,"templateid":"3398943773760440213","tiling":"0","type":"1"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"topbgiposition","hotspotvalue":"18%,10%","id":"-5441754899976008695","module":"0","name":"hotspot.name.topbgiposition","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"100","extraMap":{},"hotspotkey":"mainbgc","id":"4610006148128720616","module":"0","name":"hotspot.name.mainbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0,0,0,0,1","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"changebgi","hotspotvalue":"default/images/banner1.jpg,default/images/banner2.jpg,default/images/banner3.jpg,default/images/banner4.jpg,fileId=-4982649666353279336","id":"7706087832863851651","module":"0","name":"hotspot.name.changebgi","new":false,"templateid":"3398943773760440213","tiling":"0","type":"1"},{"display":"0","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"icp","id":"307712255758061080","module":"0","name":"hotspot.name.icp","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"changebgispeed","hotspotvalue":"speed2","id":"-3157118678259908076","module":"0","name":"hotspot.name.changebgispeed","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"}];
+  var loginResult = "";
+  var dueRemind = "";
+  var dueRemindV = "1";
+  $(function() {
+	  $("#login_form").append("<input type='hidden' name='random' id='random' value='' />");
+	  
+    if(loginResult){
+      $("#login_error").html(loginResult);
+      $("#login_error").show();
+    }else{
+      $("#login_error").hide();
+    }
+    if(seeyonProductId == 7){
+      //如果是a6s
+      var localeCfg = [{"eleid":"login_locale","defaultValue":"zh_CN","options":{"zh_CN":"中文（简体）"}}];
+    } else {
+      var localeCfg = [{"defaultValue":"zh_CN","eleid":"login_locale","options":{"zh_CN":"中文（简体）","en":"English","zh_TW":"中文（繁體）"}}];
+      if(seeyonProductId == 3 || seeyonProductId == 4){
+          delete localeCfg[0].options.en;
+      }
+    }
+    $.fillOption(localeCfg);
+
+/**
+    $("#login_locale").change(function() {
+      $("#login_locale").jsonSubmit({
+        action : _ctxPath + '/main.do?method=changeLocale'
+      });
+    });**/
+
+    var _dropdownObj =$.dropdown({
+          id:'login_locale',
+          onchange:function(){
+              $("#login_locale").jsonSubmit({
+                action : _ctxPath + '/main.do?method=changeLocale'
+              });
+          }
+    });
+    _dropdownObj.setValue(_locale);
+	
+    $("#login_form").submit(function() {
+      //登陆请求发出后，按钮置灰
+      $("#login_button").attr("disabled","disabled");
+      //var _bodyWidth = document.documentElement.clientWidth;
+      //var _bodyHeight = document.documentElement.clientHeight;
+      var _screenWidth = window.screen.width;
+      var _screenHeight = window.screen.height;
+      var font_size = 12;
+
+      /*if(_bodyWidth <= 1024){
+    	  font_size = 12;
+      }else if(_bodyWidth <= 1600){
+    	  font_size = 14;
+      }else if(_bodyWidth <= 2500){
+    	  font_size = 16;
+      }else{
+    	  font_size = 18;
+      }*/
+      
+      $("#login_form").append("<input type='hidden' name='fontSize' value='"+font_size+"' />").append("<input type='hidden' name='screenWidth' value='"+_screenWidth+"' />").append("<input type='hidden' name='screenHeight' value='"+_screenHeight+"' />");
+      
+      var loginFlag = true;
+      if(loginCallback) {
+        if(!loginCallback())
+          loginFlag = false;
+      }
+      var hasPluginCA = false;
+      var caFactory = '';
+      if(hasPluginCA&&caFactory!=''){
+        if("koal"!="" && "Jit"!=""){
+          checkCaCert();
+        }
+        if("koal"!="" && isCa){
+          caSign();
+        }
+      }
+      ;
+
+      return loginFlag;
+    });
+    
+    $("#login_password").keydown(function(event){
+    	if (event.keyCode==13) {
+    		$("#login_button").click();
+		}
+    });
+
+    var enterSubmit = true;
+    $("#login_username").keydown(function(event){
+      if(event.keyCode == 229) return;
+      if(event.keyCode == 40)
+        enterSubmit = false;
+		  if (event.keyCode==13) {
+		    if(enterSubmit)
+		    	{
+			    	 //针对password在首次按enter键提交无法获取值的情况进行特殊处理,支艳强，2016/05/04
+			    	 //弹出一个progressBar,强制刷新DOM,浏览器会把password的内容展示出来
+		    	     var login_password = $("#login_password").val();
+			         if ($.trim(login_password) == "")
+			        	 {
+				        	 //$("#login_button").click();
+				        	 var progress = $.progressBar();
+				        	 window.setTimeout(function(){
+				        		 progress.close();
+				        		 $("#login_button").click();
+				        	 },100);
+			        	 }
+			         else
+			        	 {
+			        	    $("#login_button").click();
+			        	 }
+		    	}
+		    else
+		      enterSubmit = true;
+		  }
+    });
+
+    $("#login_button").keydown(function(event){
+    	if (event.keyCode==13) {
+    		$("#login_button").click();
+		}
+    });
+    $("#VerifyCode").keydown(function(event){
+      if (event.keyCode==13) {
+          $("#login_button").click();
+      }
+  });
+    if("true" == "false" && "Jit" == ""){
+    	$("#login_form").append("<input type='hidden' id='signed_data' name='signed_data' value=''>")
+			    		.append("<input type='hidden' id='original_jsp' name='original_jsp' value=''>")
+			    		.append("<input type='hidden' id='RootCADN' name='RootCADN' value=''>");
+    }
+    /* if("false" == "true"){
+    	$("#messageDiv").show();
+    	$("#postDiv").hide();
+    	$("#messageSpn1").text("应用服务器正在停止，请您稍候再登录 。");
+    	$("#messageSpn2").text("管理员附言:");
+    	$("#messageSpn3").text("当前人数:32");
+    }else if("" != ""){
+    	$("#messageDiv").show();
+    	$("#postDiv").hide();
+    	$("#messageSpn1").text("当前已登录了一个用户，同一窗口中不能登录");
+    	$("#messageSpn2").text("      				多个用户！");
+    	$("#messageSpn3").html($("#butnFactory").html());
+    }else{
+    	
+    } */
+	
+	// try{
+ //    	//chrome不支持模态对话框借口
+ //    	var ua = navigator.userAgent;
+ //    	var isChrome = ua.indexOf('Chrome') != -1;
+ //    	if(isChrome && !window.showModalDialog){
+ //    		$('#loginArea').hide();
+ //    		$("<div style='position:absolute;top:200px;right:100px;'>chrome最新浏览器需要设置组策略，点击<a class='padding_lr_5' href='"+_ctxPath+"/main/common/chrome-set.rar'>下载</a>设置计算机。</div>").appendTo($('body'));
+ //    	}
+	// }catch(e){}
+	if ($.browser.msie) {
+		if ($.browser.version <= 8) {
+			$(".username").css("background","#fff url(/seeyon/main/login/default/images/username.png?V=V6_1_2017-04-13) 15px 10px no-repeat");
+			$(".password").css("background","#fff url(/seeyon/main/login/default/images/password.png?V=V6_1_2017-04-13) 15px 10px no-repeat");
+		};
+	};
+  });
+</script>
+<link href="/seeyon/common/images/A8/favicon.ico" type="image/x-icon" rel="icon"/>
+
+<html class="h100b overflow_login">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>致远A8-V5协同管理软件 V6.1SP2</title>
+    
+    <link rel="stylesheet" type="text/css" href="/seeyon/main/login/default/css/loginSlide.css?V=V6_1SP2_2018-11-07_476221043" />
+    <link rel="stylesheet" type="text/css" href="/seeyon/main/login/default/css/login.css?V=V6_1SP2_2018-11-07_476221043" />
+    <script type="text/javascript" src="/seeyon/common/js/passwdcheck.js?V=V6_1SP2_2018-11-07_476221043"></script>
+</head>
+<body onload="calSelecterHeight()" class="h100b" style="margin:0;padding:0;overflow:hidden;">
+    <div id="login_content">
+        <div id="login_wrap">
+            <div id="login_bg" class="slideBox">
+                <ul id="scroll_ul" class="slideImgs"> </ul>
+            </div>
+            
+            <form method="post" action="/seeyon/main.do?method=login" id="login_form" name="loginform" onsubmit="checkPwdStrength();">
+                <input id="authorization" type="hidden" name="authorization" value="" />
+               <input id="timezone" type="hidden" name="login.timezone" value=""/>
+                <div id="login_area_div" class="login_area_l_r">
+                    <div class="pwdBtn"></div>
+                    
+						<div class="qrCodeBtn"></div>
+					
+                    <div class="login_area_body">
+                        
+                            
+                            
+                            
+                                <div class="login_box">
+                                    <div class="pic">
+                                        <div class="pic_box"><img src="/seeyon/apps_res/v3xmain/images/personal/pic.gif" /></div>
+                                        <div class="pic_box_bg"></div>
+                                    </div>
+                                    <div class="login_top">
+                                        <div id="login_text_div" class="text">
+                                            
+                                            
+                                                A8-V5企业版 （并发数：350）
+                                            
+                                        </div>
+                                        <!-- 用户名 -->
+                                        <div class="username">
+                                            <em class="login_username_em"></em><input id="login_username" name="login_username" type="text" style="border:0;" />
+                                        </div>
+                                        <!-- 密码 -->
+                                        <div class="password">
+                                            <em clas="login_password_em"></em><input id="login_password" name="login_password" type="password" />
+                                        </div>
+                                        <input type="hidden" id="login_validatePwdStrength" name="login_validatePwdStrength" value="4">
+                                        <!-- 验证码 -->
+                                        <div class="captcha">
+                                            
+                                            
+                                            
+                                        </div>
+                                        <!-- 登陆按钮 -->
+                                        <div class="login_btn">
+                                            <input type="button" id="login_button" class="point" value="登 录" onClick="loginButtonOnClickHandler();" />
+                                            <input id="submit_button" type="submit" style="display: none" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="qrCode_area">
+                                        <div id="qrcode1">
+                                            <div class="qrcode">
+                                                <!--这里放置微信扫码登录的二维码图片-->
+                                            </div>
+                                            <div class="qrtext">微信扫码登录</div>
+                                        </div>
+                                        <div id="qrcode2">
+                                        	
+                                            
+                                        		<div class="qrcode"><img src="/seeyon/main/login/default/images/m3-qrcode.png?V=V6_1SP2_2018-11-07_476221043"></div>
+                                        	
+                                            <div class="qrtext">下载移动客户端</div>
+                                        </div>
+                                        <div class="qrbootom"><a id="flashQrcode">刷新二维码</a><span class="padding_lr_10">|</span><a href="https://weixin.seeyon.com/help.jsp">使用帮助</a></div>
+                                    </div>
+                                </div>
+                                <div id="login_bottom_div" class="login_bottom">
+                                    <div class="fzIntall_area">
+                                        <span class="zhixin" title="找回密码？"><a onclick="retrievePassword();"><font color="white">找回密码？</font></a></span>
+                              
+                                      
+                                            
+                                            
+	                                            
+	                                                <span class="zhixin" title="致信客户端" onclick="check_os()" style="cursor: pointer;"><font color="white">致信客户端</font></span>
+	                                            
+                                            
+                                        
+
+                                    </div>
+                                    
+                                        <div class="right margin_r_10" style="width:110px;margin-top:3px">
+                                            <select id="login_locale"></select>
+                                        </div>
+                                    
+                                </div>
+                                <!-- 密码错误显示 -->
+                                <div id="login_error" class="login_error" style="display:none"></div>
+                            
+                        
+                    </div>
+                </div>
+            </form>
+             <div id="login_logo"><img src=""></div>
+            <div class="masks top_mask"></div>
+            <div class="masks bottom_mask"></div>
+            <div class="icp_info"></div>
+        </div>
+    </div>
+    <div class="appendObject"></div>
+</body>
+<script type="text/javascript" src="/seeyon/decorations/js/jquery.loginSlide.js?V=V6_1SP2_2018-11-07_476221043"></script>
+<script type="text/javascript" src="/seeyon/main/login/default/loginPreview.js?V=V6_1SP2_2018-11-07_476221043"></script>
+<script type="text/javascript">
+    var login_index = "userLogin";
+    var resSuffix = "?V=V6_1SP2_2018-11-07_476221043";
+    var _layout = "l_r"; //模板布局：all，全屏；t_b，上下；l_r，左右；center，上下留白；
+    $.ctx.hotSpots = [{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"bgialign","hotspotvalue":"zoom","id":"-1588055738180680970","module":"0","name":"hotspot.name.bgialign","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"showQr","hotspotvalue":"1","id":"-3539521616269325798","module":"0","name":"hotspot.name.showQr","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"loginboxposition","hotspotvalue":"0%,0","id":"6676208916771717759","module":"0","name":"hotspot.name.loginboxposition","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"shownumber","hotspotvalue":"show","id":"5012875665720821815","module":"0","name":"hotspot.name.shownumber","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"20","extraMap":{},"hotspotkey":"loginboxmainbgc","hotspotvalue":"#000000","id":"-2715741453157514598","module":"0","name":"hotspot.name.loginboxmainbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"0","extraMap":{},"hotspotkey":"loginboxbottombgc","hotspotvalue":"#ffffff","id":"4866745608172227510","module":"0","name":"hotspot.name.loginboxbottombgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"100","extraMap":{},"hotspotkey":"loginboxbuttonbgc","hotspotvalue":"#38c64e","id":"4273345614984203930","module":"0","name":"hotspot.name.loginboxbuttonbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"layout","hotspotvalue":"l_r","id":"6587136008054983476","module":"0","name":"hotspot.name.layout","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"note","hotspotvalue":"hotspot.name.note.value","id":"-6215797936694212517","module":"0","name":"hotspot.name.note","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"newfeature","hotspotvalue":"show","id":"-2548474319026958401","module":"0","name":"hotspot.name.newfeature","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"topbgi","id":"-4685017448782476921","module":"0","name":"hotspot.name.topbgi","new":false,"templateid":"3398943773760440213","tiling":"0","type":"1"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"topbgiposition","hotspotvalue":"18%,10%","id":"-5441754899976008695","module":"0","name":"hotspot.name.topbgiposition","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","ext5":"100","extraMap":{},"hotspotkey":"mainbgc","id":"4610006148128720616","module":"0","name":"hotspot.name.mainbgc","new":false,"templateid":"3398943773760440213","tiling":"0","type":"2"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0,0,0,0,1","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"changebgi","hotspotvalue":"default/images/banner1.jpg,default/images/banner2.jpg,default/images/banner3.jpg,default/images/banner4.jpg,fileId=-4982649666353279336","id":"7706087832863851651","module":"0","name":"hotspot.name.changebgi","new":false,"templateid":"3398943773760440213","tiling":"0","type":"1"},{"display":"0","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"icp","id":"307712255758061080","module":"0","name":"hotspot.name.icp","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"},{"display":"1","entityId":"-1730833917365171641","entityLevel":"System,Account","ext1":"0","ext2":"0","ext3":"0","ext4":"-1730833917365171641","extraMap":{},"hotspotkey":"changebgispeed","hotspotvalue":"speed2","id":"-3157118678259908076","module":"0","name":"hotspot.name.changebgispeed","new":false,"templateid":"3398943773760440213","tiling":"0","type":"0"}];
+    var imgSize={"default/images/banner1.jpg":"2000,1080","default/images/banner4.jpg":"2000,1080","fileId=-4982649666353279336":"1920,1080","default/images/banner2.jpg":"2000,1080","default/images/banner3.jpg":"2000,1080"};
+    $(function() {
+        loginDefault();
+
+        //选中光标改变背景色
+        $("#login_username").focus(function(){
+            $(this).parent().css("background-color","#FFF");
+        }).blur(function(){
+            $(this).parent().css("background-color","rgba(255,255,255,0.7)");
+        });
+        
+        $("#login_password").focus(function(){
+            $(this).parent().css("background-color","#FFF");
+        }).blur(function(){
+            $(this).parent().css("background-color","rgba(255,255,255,0.7)");
+        });
+
+        //选中光标改变背景色,第四套登录框特殊处理
+        $(".login_area_center #login_username").focus(function(){
+            $(this).parent().css("background-color","#FFF");
+        }).blur(function(){
+            $(this).parent().css("background-color","transparent");
+        });
+        
+        $(".login_area_center #login_password").focus(function(){
+            $(this).parent().css("background-color","#FFF");
+        }).blur(function(){
+            $(this).parent().css("background-color","transparent");
+        });
+        $("#login_username").focus();
+
+        //缩小语言选择框宽度
+        $("#login_locale_dropdown").mouseenter(function(event) {
+            $("#login_locale_dropdown_content").height("auto");
+        });
+        //IE9以下头像边框不显示
+        if ($.browser.msie){
+            if($.browser.version < 9){
+                $(".pic_box_bg").hide();
+                $(".pic_box img").css({"display":"block","width":"92px","height":"92px","border":"2px solid #FFF"});
+                //IE9以下背景色处理,统一背景色和底部色
+                $("#login_area_div").css({"background":" url(/seeyon/main/login/default/images/black40.png)"});
+                $(".login_bottom").css({"background":" url(/seeyon/main/login/default/images/whight40.png)"});
+            };
+        };
+        //二维码
+        changeLoginMode();
+        
+        if ($.browser.msie) {
+            //辅助程序
+            $(".appendObject").append('<OBJECT name="OneSetup" class="hidden" classid="clsid:6076464C-7D15-42DF-829C-7A0194D4D61E" codebase="/seeyon/common/setup/install.cab#version=1,0,0,4" width=0% height=0% align=center hspace=0 vspace=0></OBJECT>');
+
+        }
+        //改变窗口大小，重新加载背景图片
+        window.onresize = function(){
+            changeSlide(_changebgispeed);
+        }
+        //调整登录框的位置
+        adjustLoginPosition();
+    });
+
+    var sendSMSCodeTime = 119;
+
+    function detectOS() {
+        var sUserAgent = navigator.userAgent;
+        var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows") || (navigator.platform == "Win64");
+        var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel");
+        if (isMac) {
+            return "Mac";
+        }
+        if (isWin) {
+        	if(sUserAgent.indexOf("Windows NT 5")!=-1) { 
+        	    return "XP";
+        	} else { 
+        		return "unXP";
+        	}
+        }
+        return "other";
+    }
+
+    function check_os() { 
+    	var osVersion = detectOS();
+    	
+    	if (osVersion == "Mac") {
+    		window.location.href = "/seeyon/autoinstall/zxsetup.dmg";
+    	} else if (osVersion == "unXP") {
+        	window.location.href = "/seeyon/autoinstall/zxsetup.exe";
+        } else if (osVersion == "XP") {
+        	window.location.href = "/seeyon/autoinstall/zxsetup_xp.exe";
+       	} else {
+       		alert("致信3.0不支持该版本！请使用Windows XP及以上的版本");
+        }
+    	
+    	/* return os_type;  */
+    } 
+    
+    function loginCallback() {
+        return true;
+    }
+    
+    function retrievePassword(){
+    	$.ajax({
+    		sync : true,
+    		type: "POST",
+    		url: _ctxPath+"/personalBind.do?method=isCanUse",
+    		dataType : 'text',
+    	      success : function(data) {
+    	    	  var isCanUse = jQuery.parseJSON(data);
+    	    	     if(isCanUse=="true" || isCanUse==true){
+    	    	    	window.open(_ctxPath + '/personalBind.do?method=retrievePassword');
+    	    	     }else{
+   	    	        	var msg = "管理员未设置系统邮箱，也未启用短信插件，</br>不能使用密码找回功能，请联系管理员！" ;
+   	    				retrievePwdMsg = $.messageBox({
+   	    					'id':"retrievePwdMessageBox",
+   	    					'type': 0,
+   	    					'msg': "<div class='msgbox_img_2' style='float:left'></div><div class='margin_t_5 margin_l_5' style='float:left'>" + msg + "</div>"
+   	    				});
+    	    	     }
+    	        },
+    	        error : function(XMLHttpRequest, textStatus, errorThrown) {
+    	        	 alert("失败");
+    	        }
+    	});
+    }
+
+    function loginButtonOnClickHandler() {
+    	var timeZoneId = getTimeZoneId();
+   		$("#timezone").val(timeZoneId);
+    	
+        var login_username = $("#login_username").val();
+        if ($.trim(login_username) == "") {
+            $("#submit_button").click();
+        } else {
+            var smsVerifyCode = "";
+            if ($("#smsLoginInputDiv").length == 1) {
+                smsVerifyCode = $.trim($("#smsVerifyCode").val());
+            }
+            var isCanUseSMS = false;
+            if (!isCanUseSMS || ($("#smsLoginInputDiv").length == 1 && smsVerifyCode != "")) {
+                $("#submit_button").click();
+            } else {
+                //进行短信登录验证
+                new portalManager().smsLoginEnabled(login_username, {
+                    success: function(telNumber) {
+                        if (telNumber && $.trim(telNumber).length > 0) {
+                            if ($("#smsLoginInputDiv").length == 0) {
+                                var smsHtml = "<div id='smsLoginInputDiv' class='clearfix'>";
+                                if ($.browser.msie && $.browser.version < 9) {
+                                    smsHtml += "<div class='smsLogin_textbox' style='background:url(/seeyon/main/login/default/images/white.png)'>";
+                                }else{
+                                    smsHtml += "<div class='smsLogin_textbox'>";
+                                }
+                                smsHtml += "<input title='请输入短信验证码' id='smsVerifyCode' name='login.smsVerifyCode' type='text' maxlength='8' />";
+                                smsHtml += "</div>";
+                                smsHtml += "<div class='smsLogin_btn' id='sendSMSCodeButton'>获取验证码</div>";
+                                smsHtml += "</div>";
+                                $(".captcha").after(smsHtml);
+                                $("#sendSMSCodeButton").click(function() {
+                                    if (sendSMSCodeTime != 119) {
+                                        return;
+                                    }
+                                    var login_username = $("#login_username").val();
+                                    new portalManager().sendSMSLoginCode(login_username, {
+                                        success: function(msg) {
+                                            if (msg == "success") {
+                                                $("#smsVerifyCode").val("");
+                                                var interval = setInterval(function() {
+                                                    sendSMSCodeTime--;
+                                                    if (sendSMSCodeTime == 0) {
+                                                        $("#sendSMSCodeButton").html("获取验证码").removeClass('smsLogin_btn_disable');
+                                                        sendSMSCodeTime = 119;
+                                                        clearInterval(interval);
+                                                    } else {
+                                                        $("#sendSMSCodeButton").html(sendSMSCodeTime + " " + "重新获取").addClass('smsLogin_btn_disable');
+                                                    }
+                                                }, 1000);
+                                                $("#sendSMSCodeButton").html(sendSMSCodeTime + " " + "重新获取").addClass('smsLogin_btn_disable');
+                                            } else {
+                                                $("#login_error").css("background-image", "none");
+                                                $("#login_error").html(msg);
+                                                $("#login_error").show();
+                                            }
+                                        }
+                                    });
+                                });
+                                $("#smsLoginInputDiv").show();
+                            } else {
+                                $("#submit_button").click();
+                            }
+                        } else {
+                            $("#smsVerifyCode").val("");
+                            $("#submit_button").click();
+                        }
+                    },
+                    error: function() {
+                        $("#submit_button").click();
+                    }
+                });
+            }
+        }
+    }
+    
+    function getTimeZoneId(){
+    	//获取客户端时区
+    	var d = new Date();
+    	var timezoneOffset = 0 - d.getTimezoneOffset();
+    	var gmtHours = (timezoneOffset/60).toString();
+    	//8  -8:30  8:45
+    	var gmtHoursArr = gmtHours.split(".");
+    	var h = gmtHoursArr[0];
+    	if(h>=0){
+    		h = "+"+h;
+    	}
+    	var m = "00";
+    	if(gmtHoursArr.length>1){
+    		m = Number("0."+gmtHoursArr[1]) * 60;
+    	}
+    	return  "GMT"+h+":"+m;
+    }
+
+    var commonProgressbar = null;
+
+    //开始进度条
+    function startProc(title) {
+        try {
+            var options = {
+                title: title
+            };
+            if (title == undefined) {
+                options = {};
+            }
+            if (commonProgressbar != null) {
+                commonProgressbar.start();
+            } else {
+                commonProgressbar = new MxtProgressBar(options);
+            }
+        } catch (e) {}
+    }
+
+    //结束进度条
+    function endProc() {
+        try {
+            if (commonProgressbar) {
+                commonProgressbar.close();
+            }
+            commonProgressbar = null;
+        } catch (e) {}
+    }
+
+    var alterWin;
+
+    function openAssistantSetup() {
+    	var myhost= window.location.host;
+        var myport= window.location.port;
+        if(myport==""){
+        	myport= "80";
+        }
+        var ucUrl= "/"+myhost+"/"+myhost+"/"+myport;
+        var obj = null;
+        try {
+            obj = new ActiveXObject("SeeyonActivexInstall.SeeyonInstall");
+            var ele = document.getElementById("login_locale");
+            var locale = ele != null ? ele.value : '';
+            if( ele == null){
+                locale = navigator.browserLanguage.replace(/([a-z]{2})(-)*([A-Z|a-z]{2})*/,function($0,$1,$2,$3){
+                    var s = $1;
+                    if( '-' == $2){
+                        s += '_';
+                        s += $3.toUpperCase();
+                    }
+                    return s;
+                });
+            }
+            
+            startProc("请稍候,正在初始化程序...");
+            var result = obj.Startup(_ctxServer + "/autoinstall/A8", locale + ucUrl, "@videoconf@identificationDog@erweima@U8Reg@wizard");
+            endProc();
+        } catch (e) {
+            alterWin = $.dialog({
+                htmlId: 'alert',
+                title: "自动安装",
+                url: "/seeyon/genericController.do?ViewPage=apps/autoinstall/downLoadIESet",
+                isClear: false,
+                width: 420,
+                height: 200
+            });
+        }
+    }
+    function calSelecterHeight(){
+        var select_h = $("#login_area_div").offset().top +  $("#login_area_div").height() +75;
+        if (select_h >= $(window).height()) {
+            $("#login_locale_dropdown_content_iframe").css("top","-44px");
+            $("#login_locale_dropdown_content").css("top","-44px");
+        }else{
+             $("#login_locale_dropdown_content_iframe").css("top","25px");
+            $("#login_locale_dropdown_content").css("top","25px");
+        };
+    }
+    
+    function checkPwdStrength(){
+    	var login_validatePwdStrength =4;
+        var login_password = $("#login_password").val();
+        if ($.trim(login_password) == "") {
+        }else{
+        	login_validatePwdStrength = getPwdStrongForLoginPage(login_password);
+        	$("#login_validatePwdStrength").val(login_validatePwdStrength);
+        }
+        return true;
+    }
+    //调整登录框的位置
+    function adjustLoginPosition(){
+        var window_h = $(window).height();
+        var login_h = $("#login_area_div").height();
+        var login_top = $("#login_area_div").offset().top;
+        var login_left = $("#login_area_div").offset().left;
+
+        if (_layout == "all" || _layout == "center") {//第一套和第四套布局只判断bottom和left
+            if (login_left <= 0) {
+                $("#login_area_div").css({
+                    "left":"0px",
+                    "right":"inherit"
+                });
+            }
+            if (window_h - login_top < login_h) {
+                $("#login_area_div").css({
+                    "bottom":"0px",
+                    "top":"inherit"
+                });
+            }
+        }else if (_layout == "t_b") {//第二套布局只判断top
+            if (login_top <= 0) {
+                $("#login_area_div").css({
+                    "top":"0px",
+                    "bottom":"inherit"
+                });
+            }
+        }else if (_layout == "l_r"){//第四套布局只判断left
+             if (login_left <= 0) {
+                $("#login_area_div").css({
+                    "left":"0px",
+                    "right":"inherit"
+                });
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,1229 @@
+#login_content,#login_wrap,#login_contents{
+    width: 100%;
+    height: 100%;
+}
+#login_contents{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+#login_logo{
+    position: absolute;
+    top: 18%;
+    left: 10%;
+    z-index: 100;
+}
+.loggedArea {
+    margin: 0 auto;
+    padding: 20px;
+    width: 300px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: #FEF3B7;
+    position: relative;
+    z-index: 999;
+    box-shadow: 2px 2px 2px #aaa;
+}
+.masks{
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    display: none;
+}
+.top_mask{
+    top: 0;
+}
+.bottom_mask{
+    bottom: 0;
+}
+.pwdBtn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 59px;
+    height: 59px;
+    background: url(../images/pwdBtn.png?V=V6_1_2017-04-13);
+    cursor: pointer;
+    z-index: 999;
+}
+#login_locale_dropdown{
+    position: relative;
+}
+.maintainArea {
+    position: absolute;
+    z-index: 1000;
+    padding: 20px 20px 20px 70px;
+    width: 270px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: url(../images/error.png?V=V6_1_2017-04-13) 30px 20px no-repeat #FEF3B7;
+    box-shadow: 2px 2px 2px #aaa;
+    margin-left: 11px;
+}
+#login_bg{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+/**/
+.login_area_all{
+	position: absolute;
+    z-index: 100;
+    width: 337px;
+    border-radius: 4px;
+    margin-top:66px;
+}
+.login_area_all .login_box{
+	padding: 0 35px 15px 35px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.login_area_all .qrCodeBtn{
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 59px;
+    height: 59px;
+    background: url(../images/qrCodeBtn.png?V=V6_1_2017-04-13);
+    cursor: pointer;
+}
+.login_area_all .login_box .pic{
+	position: relative;
+	height: 75px;
+}
+.login_area_all .login_box .pic .pic_box{
+	position: absolute;
+    z-index: 2;
+    left: 83px;
+    top: -47px;
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    border-radius: 130px;
+}
+.login_area_all .login_box .pic .pic_box img{
+	height: 96px;
+	width: 96px;
+}
+.login_area_all .login_box .pic .pic_box_bg{
+	position: absolute;
+    z-index: 1;
+    left: 64px;
+    top: -67px;
+    width: 134px;
+    height: 134px;
+    background: url(../images/pic_box_bg.png?V=V6_1_2017-04-13) 2px 2px no-repeat;
+}
+.pic_box_bg {
+    -webkit-animation-name: myfirst;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    animation-name: myfirst;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@-webkit-keyframes myfirst{
+    0%   {-webkit-transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);}
+}
+@keyframes myfirst{
+    0%   {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+.login_area_all .login_box .pic .pic_box_bg_ie8down{
+	display: none;
+    position: absolute;
+    z-index: 1;
+    left: 81px;
+    top: -48px;
+    width: 94px;
+    height: 94px;
+    background: url(../images/pic_bg_ie8.png?V=V6_1_2017-04-13);
+}
+.login_area_all .login_box .login_top{
+	/*display: none;*/
+	min-height: 248px;
+}
+.login_area_all .login_box .login_top .text {
+    color: #4c76a8;
+    font-size: 12px;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Microsoft YaHei',SimSun;
+}
+.login_area_all .login_box .login_top .username {
+    height: 48px;
+    background: rgba(255,255,255,0.7) url(../images/username.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/username.gif) 15px 10px no-repeat #FFF;
+    border-radius: 3px;
+}
+.login_area_all .login_box .login_top .username input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_all .login_box .login_top .password {
+	margin-top: 12PX;
+    height: 48px;
+    background: rgba(255,255,255,0.7) url(../images/password.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/password.gif) 15px 10px no-repeat #FFF;
+    border-radius: 3px;
+}
+.login_area_all .login_box .login_top .password input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_all .login_box .login_top .captcha{
+    margin-top: 10px;
+}
+.login_area_all .login_box .login_top .captcha .captcha_box{
+    float: left;
+    margin-right: 10px;
+    width: 165px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+}
+.login_area_all .login_box .login_top .captcha .captcha_box input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background: none;
+    border: 0;
+}
+.login_area_all .login_box .login_top .login_btn{
+    margin-top: 12px;
+}
+.login_area_all .login_box .login_top .login_btn input{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Microsoft YaHei',SimSun;
+    color: #FFF;
+    font-size: 24px;
+    background: #38C64E;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.login_area_all .login_bottom{
+	height: 39px;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 0px 0px 4px 4px;
+    padding: 15px 0px 0px 0px;
+    background: rgba(19, 63, 100, 0.7);
+    zoom: 1;
+    display: block;
+}
+.login_area_all .login_bottom .fzIntall_area {
+	float: left;
+    margin-top: 7px;
+    padding: 0 0 0 20px;
+    width: 190px;
+}
+.login_area_all .login_bottom .fzIntall_area .zhixin {
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 95px;
+    display: block;
+    float: left;
+}
+.login_area_all .login_bottom .common_button{
+    border:none;
+    background: none;
+    color: #fff;
+}
+.login_area_all .login_error {
+	display: none;
+    position: absolute;
+    z-index: 10;
+    left: 33px;
+    top: 50px;
+    padding: 8px 20px 8px 65px;
+    width: 185px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: url(../images/error.png?V=V6_1_2017-04-13) 30px center no-repeat #FEF3B7;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+.login_area_all .login_box .qrCode_area{
+	 display: none;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    width: 100%;
+    height: 233px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+.login_area_all .login_box .qrCode_area  #qrcode1{
+	margin-left: 7px;
+    margin-right: 79px;
+    padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_all .login_box .qrCode_area  #qrcode1 .qrcode{
+	width: 57px;
+    height: 57px;
+    overflow: hidden;
+    padding: 15px 16px 16px 15px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+.login_area_all .login_box .qrCode_area #qrcode2{
+	padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_all .login_box .qrCode_area #qrcode2 .qrcode{
+	width: 88px;
+    height: 88px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.login_area_all .login_box .qrCode_area #qrcode2 .qrcode img{
+	width: 100%;
+}
+.login_area_all .login_box .qrCode_area .qrbootom {
+    clear: both;
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 70px;
+    color: #8d8d8d;
+}
+.login_area_all .login_box .qrCode_area .qrbootom a{
+    color: #8d8d8d;
+}
+
+.login_area_all .login_area_body #smsLoginInputDiv{
+    margin-top: 10px;
+}
+.login_area_all .login_area_body #smsLoginInputDiv .smsLogin_textbox{
+    float: left;
+    margin-right: 10px;
+    width: 165px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+}
+.login_area_all .login_area_body #smsLoginInputDiv .smsLogin_textbox input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background: none;
+    border: 0;
+}
+
+.login_area_all .login_area_body #smsLoginInputDiv .smsLogin_btn{
+    display: inline-block;
+    width: 92px;
+    line-height: 48px;
+    font-size: 12px;
+    text-align: center;
+    background: #f6f6f6;
+    cursor: pointer;
+}
+.login_area_all .login_area_body #smsLoginInputDiv .smsLogin_btn_disable {
+    color: #B1B1B1;cursor: default;
+}
+/*second*/
+/**/
+.login_area_t_b{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 210px;
+    background: rgba(0,0,0,0.6);
+}
+.login_area_t_b .login_area_body{
+	width: 830px;
+	height: 100%;
+    position: relative;
+	margin: 0px auto;
+}
+.login_area_t_b .login_area_body #smsLoginInputDiv{
+    width: 210px;
+    position: absolute;
+    left: 295px;
+    top: 116px;
+    margin-top:10px;
+    overflow: hidden;
+}
+.login_area_t_b .login_area_body #smsLoginInputDiv .smsLogin_textbox{
+    display: inline-block;
+    width: 100px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 25px;
+    vertical-align: top;
+}
+.login_area_t_b .login_area_body #smsLoginInputDiv .smsLogin_textbox input{
+    width: 100px;
+    border-radius: 10px;
+    text-align: center;
+    background: none;
+    border: 0;
+    margin-top: 12px;
+}
+.login_area_t_b .login_area_body #smsLoginInputDiv .smsLogin_btn{
+    display: inline-block;
+    width: 92px;
+    line-height: 48px;
+    border-radius: 25px;
+    font-size: 12px;
+    text-align: center;
+    background: #f6f6f6;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.login_area_t_b .login_area_body #smsLoginInputDiv .smsLogin_btn_disable {
+    color: #B1B1B1;cursor: default;
+}
+.login_area_t_b .login_area_body .captcha{
+    position: absolute;
+    top: 116px;
+}
+.login_area_t_b .login_area_body .captcha .captcha_box{
+    border-radius: 25px;
+}
+.login_area_t_b .login_area_body .captcha img{
+    border-radius: 25px;
+}
+.login_area_t_b .qrCodeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 59px;
+    height: 59px;
+    background: url(../images/qrCodeBtn.png?V=V6_1_2017-04-13);
+    cursor: pointer;
+}
+.login_area_t_b .login_box .pic{
+    display: none;
+}
+.login_area_t_b .login_box{
+    height: 130px;
+    width: 100%;
+}
+.login_area_t_b .login_box .login_top{
+	height: 100%;
+    width: 100%;
+    /*display: none;*/
+}
+.login_area_t_b .login_box .login_top .text {
+    height: 37px;
+    line-height: 37px;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    padding: 10px 0;
+    text-align: left;
+    font-family: 'Microsoft YaHei',SimSun;
+}
+.login_area_t_b .login_box .login_top .username {
+	margin-top: 12px;
+    height: 48px;
+    width: 280px;
+    float: left;
+    background: rgba(255,255,255,0.7) url(../images/username.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/username.gif) 15px 10px no-repeat #FFF;
+    border-radius: 25px;
+}
+.login_area_t_b .login_box .login_top .username input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_t_b .login_box .login_top .password {
+    margin-top: 12PX;
+    margin-left: 15px;
+    height: 48px;
+    width: 280px;
+    float: left;
+    background: rgba(255,255,255,0.7) url(../images/password.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/password.gif) 15px 10px no-repeat #FFF;
+    border-radius: 25px;
+}
+.login_area_t_b .login_box .login_top .password input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_t_b .login_box .login_top .captcha{
+    margin-top: 10px;
+}
+.login_area_t_b .login_box .login_top .captcha .captcha_box{
+    float: left;
+    margin-right: 10px;
+    width: 165px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+}
+.login_area_t_b .login_box .login_top .captcha .captcha_box input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background: none;
+    border: 0;
+}
+.login_area_t_b .login_box .login_top .login_btn{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 220px;
+    height: 50px;
+    float: left;
+    border-radius: 25px;
+}
+.login_area_t_b .login_box .login_top .login_btn input{
+	width: 220px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Microsoft YaHei',SimSun;
+    color: #FFF;
+    font-size: 24px;
+    background: #38C64E;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.login_area_t_b .login_bottom{
+    height: 35px;
+    width: 350px;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 0px 0px 4px 4px;
+    padding: 5px 0px 0px 0px;
+    zoom: 1;
+    float: right;
+    display: block;
+}
+.login_area_t_b .login_bottom .fzIntall_area {
+    float: left;
+    margin-top: 7px;
+    padding: 0 0 0 20px;
+    width: 210px;
+}
+.login_area_t_b .login_bottom .fzIntall_area .zhixin {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 105px;
+    display: block;
+    float: left;
+}
+.login_area_t_b .login_bottom .common_button{
+    border:none;
+    background: none;
+    color: #fff;
+}
+.login_area_t_b .login_bottom .common_button{
+
+}
+.login_area_t_b .login_error {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: -16px;
+    left: 50%;
+    padding: 8px 20px 8px 65px;
+    margin-left: -90px;
+    width: 185px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: url(../images/error.png?V=V6_1_2017-04-13) 30px center no-repeat #FEF3B7;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+.login_area_t_b .login_box .qrCode_area{
+     display: none;
+    width: 100%;
+    height: 150px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.login_area_t_b .login_box .qrCode_area  #qrcode1{
+    margin-left: 211px;
+    margin-right: 79px;
+    padding: 30px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_t_b .login_box .qrCode_area  #qrcode1 .qrcode{
+    width: 57px;
+    height: 57px;
+    overflow: hidden;
+    padding: 15px 16px 16px 15px;
+    background: #fff;
+}
+.login_area_t_b .login_box .qrCode_area #qrcode2{
+    padding: 30px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_t_b .login_jnbv c box .qrCode_area #qrcode2 .qrcode{
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.login_area_t_b .login_box .qrCode_area #qrcode2 .qrcode img{
+    width: 100%;
+}
+.login_area_t_b .login_box .qrCode_area .qrbootom {
+    clear: both;
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    color: #8d8d8d;
+    position: absolute;
+    top: 8px;
+    right: 22px;
+}
+.login_area_t_b .login_box .qrCode_area .qrbootom a{
+    color: #8d8d8d;
+}
+.login_area_t_b .loggedArea {
+    margin-top: 27px;
+}
+.login_area_t_b #maintainArea{
+    left: 50%;
+    margin-left: -180px;
+}
+/*third*/
+.login_area_l_r{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 102;
+    width: 380px;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.login_area_l_r .login_area_body{
+    position: relative;
+    top: 50%;
+    margin-top: -200px;
+}
+.login_area_l_r .login_box{
+    padding: 0 35px 15px 35px;
+}
+.login_area_l_r .qrCodeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 59px;
+    height: 59px;
+    background: url(../images/qrCodeBtn.png?V=V6_1_2017-04-13);
+    cursor: pointer;
+}
+.login_area_l_r .login_box .pic{
+    position: relative;
+    height: 75px;
+}
+.login_area_l_r .login_area_body .captcha .captcha_box{
+    border-radius: 25px;
+}
+.login_area_l_r .login_area_body .captcha img{
+    border-radius: 25px;
+}
+.login_area_l_r .login_box .pic .pic_box{
+    position: absolute;
+    z-index: 2;
+    left: 109px;
+    top: -47px;
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    border-radius: 130px;
+}
+.login_area_l_r .login_box .pic .pic_box img{
+    height: 96px;
+    width: 96px;
+}
+.login_area_l_r .login_box .login_top{
+    /*display: none;*/
+    min-height: 248px;
+    width: 268px;
+    margin: 0 auto;
+}
+.login_area_l_r .login_box .login_top .text {
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Microsoft YaHei',SimSun;
+}
+.login_area_l_r .login_box .login_top .username {
+    height: 48px;
+    background: rgba(255,255,255,0.7) url(../images/username.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/username.gif) 15px 10px no-repeat #FFF;
+    border-radius: 25px;
+}
+.login_area_l_r .login_box .login_top .username input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_l_r .login_box .login_top .password {
+    margin-top: 12PX;
+    height: 48px;
+    background: rgba(255,255,255,0.7) url(../images/password.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/password.gif) 15px 10px no-repeat #FFF;
+    border-radius: 25px;
+}
+.login_area_l_r .login_box .login_top .password input{
+    margin-left: 50px;
+    margin-top: 12px;
+    width: 200px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    font-size: 16px;
+    background: none;
+}
+.login_area_l_r .login_box .login_top .captcha{
+    margin-top: 10px;
+}
+.login_area_l_r .login_box .login_top .captcha .captcha_box{
+    float: left;
+    margin-right: 10px;
+    width: 165px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+}
+.login_area_l_r .login_box .login_top .captcha .captcha_box input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    background: none;
+    font-size: 16px;
+    vertical-align: top;
+    border: 0;
+}
+.login_area_l_r .login_box .login_top .login_btn{
+    margin-top: 30px;
+}
+.login_area_l_r .login_box .login_top .login_btn input{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Microsoft YaHei',SimSun;
+    color: #FFF;
+    font-size: 24px;
+    background: #38C64E;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.login_area_l_r .login_bottom{
+    height: 39px;
+    width: 268px;
+    font-size: 12px;
+    margin: 0 auto;
+    color: #FFF;
+    border-radius: 0px 0px 4px 4px;
+    zoom: 1;
+    display: block;
+}
+.login_area_l_r .login_bottom .fzIntall_area {
+    float: left;
+    margin-top: 7px;
+    width: 158px;
+}
+.login_area_l_r .login_bottom .fzIntall_area .zhixin {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 70px;
+    display: block;
+    float: left;
+}
+.login_area_l_r .login_bottom .fzIntall_area .hand{
+    width: 87px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+.login_area_l_r .login_bottom .margin_r_10 {
+    margin-right: 0px;
+}
+.login_area_l_r .login_bottom .common_button{
+	border:none;
+	background: none;
+	color: #fff;
+}
+.login_area_l_r .login_error {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    left: 54px;
+    top: 50px;
+    padding: 8px 20px 8px 65px;
+    width: 191px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: url(../images/error.png?V=V6_1_2017-04-13) 30px center no-repeat #FEF3B7;
+    box-shadow: 2px 2px 2px #aaa;
+}
+
+.login_area_l_r .login_box .qrCode_area{
+     display: none;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    width: 100%;
+    height: 211px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+.login_area_l_r .login_box .qrCode_area  #qrcode1{
+    margin-left: 28px;
+    margin-right: 79px;
+    padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_l_r .login_box .qrCode_area  #qrcode1 .qrcode{
+    width: 57px;
+    height: 57px;
+    overflow: hidden;
+    padding: 15px 16px 16px 15px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+.login_area_l_r .login_box .qrCode_area #qrcode2{
+    padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_l_r .login_box .qrCode_area #qrcode2 .qrcode{
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.login_area_l_r .login_box .qrCode_area #qrcode2 .qrcode img{
+    width: 100%;
+}
+.login_area_l_r .login_box .qrCode_area .qrbootom {
+    clear: both;
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 70px;
+    color: #8d8d8d;
+}
+.login_area_l_r .login_box .qrCode_area .qrbootom a{
+    color: #8d8d8d;
+}
+.login_area_l_r .login_area_body #smsLoginInputDiv{
+    margin-top: 10px;
+}
+.login_area_l_r .login_area_body #smsLoginInputDiv .smsLogin_textbox{
+    float: left;
+    margin-right: 10px;
+    width: 165px;
+    height: 48px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 25px;
+}
+.login_area_l_r .login_area_body #smsLoginInputDiv .smsLogin_textbox input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background: none;
+    border: 0;
+}
+
+.login_area_l_r .login_area_body #smsLoginInputDiv .smsLogin_btn{
+    display: inline-block;
+    width: 92px;
+    line-height: 48px;
+    font-size: 12px;
+    text-align: center;
+    background: #f6f6f6;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.login_area_l_r .login_area_body #smsLoginInputDiv .smsLogin_btn_disable {
+    color: #B1B1B1;cursor: default;
+}
+
+/*four*/
+.login_area_center{
+    position: absolute;
+    top: 40%;
+    right: 30%;
+    z-index: 100;
+    width: 340px;
+    border-radius: 6px;
+}
+.login_area_center .login_box{
+    background: rgba(255,255,255,0);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.login_area_center .qrCodeBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 59px;
+    height: 59px;
+    z-index: 999;
+    background: url(../images/qrCodeBtn.png?V=V6_1_2017-04-13);
+    cursor: pointer;
+}
+.login_area_center .login_box .pic{
+    position: relative;
+    height: 100px;
+}
+.login_area_center .login_box .pic .pic_box{
+    position: absolute;
+    z-index: 2;
+    left: 120px;
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    border-radius: 130px;
+}
+.login_area_center .login_box .pic .pic_box img{
+    height: 96px;
+    width: 96px;
+}
+.login_area_center .login_box .pic .pic_box_bg{
+    display: none;
+}
+.login_area_center .login_box .pic .pic_box_bg_ie8down{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: 81px;
+    top: -48px;
+    width: 94px;
+    height: 94px;
+    background: url(../images/pic_bg_ie8.png?V=V6_1_2017-04-13);
+}
+.login_area_center .login_box .login_top{
+    min-height: 248px;
+}
+.login_area_center .login_box .login_top .text {
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Microsoft YaHei',SimSun;
+}
+.login_area_center .login_box .login_top .username {
+    height: 48px;
+    border-radius: 3px;
+    border:2px solid rgba(255,255,255,0.7);
+}
+.login_area_center .login_box .login_top .username em{
+	display: inline-block;
+    height: 48px;
+    width: 50px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url(../images/username.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/username.gif) 15px 10px no-repeat #FFF;
+}
+.login_area_center .login_box .login_top .username input{
+    margin-top: 12px;
+    width: 250px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_center .login_box .login_top .password {
+    height: 48px;
+    border-radius: 3px;
+    margin-top: 12px;
+    border:2px solid rgba(255,255,255,0.7);
+}
+.login_area_center .login_box .login_top .password em{
+	display: inline-block;
+    height: 48px;
+    width: 50px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url(../images/password.png?V=V6_1_2017-04-13) 15px 10px no-repeat;
+    _background: url(../images/password.gif) 15px 10px no-repeat #FFF;
+}
+.login_area_center .login_box .login_top .password input{
+    margin-top: 12px;
+    width: 250px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 0;
+    background: none;
+    font-size: 16px;
+}
+.login_area_center .login_box .login_top .captcha{
+    margin-top: 10px;
+}
+.login_area_center .login_box .login_top .captcha .captcha_box{
+    float: left;
+    margin-right: 10px;
+    width: 232px;
+    height: 48px;
+    border: 2px solid rgba(255,255,255,0.7);
+}
+.login_area_center .login_box .login_top .captcha .captcha_box input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 213px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background:none;
+    border: 0;
+}
+.login_area_center .login_box .login_top .login_btn{
+    margin-top: 12px;
+}
+.login_area_center .login_box .login_top .login_btn input{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Microsoft YaHei',SimSun;
+    color: #FFF;
+    font-size: 24px;
+    background: red;
+    border: 0;
+    cursor: pointer;
+}
+.login_area_center .login_bottom{
+    height: 39px;
+    font-size: 12px;
+    color: #FFF;
+    border-radius: 0px 0px 4px 4px;
+    padding-top: 15px;
+    zoom: 1;
+    display: block;
+}
+.login_area_center .login_bottom .fzIntall_area {
+    float: left;
+    margin-top: 7px;
+    padding: 0 0 0 20px;
+    width: 190px;
+}
+.login_area_center .login_bottom .fzIntall_area .zhixin {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 95px;
+	display: block;
+	float: left;
+}
+.login_area_center .login_bottom .common_button{
+    border:none;
+    background: none;
+    color: #fff;
+}
+.login_area_center .login_error {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    left: 33px;
+    top: 73px;
+    padding: 8px 20px 8px 65px;
+    width: 185px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fb2727;
+    border-radius: 5px;
+    background: url(../images/error.png?V=V6_1_2017-04-13) 30px center no-repeat #FEF3B7;
+    box-shadow: 2px 2px 2px #aaa;
+}
+.login_area_center .login_box .qrCode_area{
+     display: none;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    width: 100%;
+    height: 211px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+.login_area_center .login_box .qrCode_area  #qrcode1{
+    margin-left: 48px;
+    margin-right: 79px;
+    padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_center .login_box .qrCode_area  #qrcode1 .qrcode{
+    width: 57px;
+    height: 57px;
+    overflow: hidden;
+    padding: 15px 16px 16px 15px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+.login_area_center .login_box .qrCode_area #qrcode2{
+    padding: 20px 0;
+    width: 88px;
+    height: 88px;
+    float: left;
+}
+.login_area_center .login_box .qrCode_area #qrcode2 .qrcode{
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.login_area_center .login_box .qrCode_area #qrcode2 .qrcode img{
+    width: 100%;
+}
+.login_area_center .login_box .qrCode_area .qrbootom {
+    clear: both;
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 36px;
+    padding-right: 38px;
+    color: #8d8d8d;
+}
+.login_area_center .login_box .qrCode_area .qrbootom a{
+    color: #8d8d8d;
+}
+.login_area_center .login_area_body #smsLoginInputDiv{
+    margin-top: 10px;
+}
+.login_area_center .login_area_body #smsLoginInputDiv .smsLogin_textbox{
+    float: left;
+    margin-right: 10px;
+    width: 232px;
+    height: 48px;
+    border: 2px solid rgba(255,255,255,0.7);
+}
+.login_area_center .login_area_body #smsLoginInputDiv .smsLogin_textbox input{
+    margin-left: 22px;
+    margin-top: 12px;
+    width: 145px;
+    height: 24px;
+    vertical-align: top;
+    font-size: 16px;
+    background: none;
+    border: 0;
+}
+
+.login_area_center .login_area_body #smsLoginInputDiv .smsLogin_btn{
+    display: inline-block;
+    width: 92px;
+    line-height: 48px;
+    font-size: 12px;
+    text-align: center;
+    background: #f6f6f6;
+    cursor: pointer;
+}
+.login_area_center .login_area_body #smsLoginInputDiv .smsLogin_btn_disable {
+    color: #B1B1B1;cursor: default;
+}
+/*--ICP备案信息--*/
+.icp_info{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    left:0;
+    bottom: 5px;
+    text-align: center;
+    z-index: 100;
+    font-size:12px;
+}
+.icp_info a,.icp_info p{
+    display:inline-block;
+    padding:0 10px;
+    background-color:rgba(255,255,255,0.3);
+    color:#333;
+}

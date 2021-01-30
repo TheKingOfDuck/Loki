@@ -1,0 +1,21 @@
+/**图片轮播*/
+.slideBox{overflow:hidden; width:100%; position: relative;}
+.slideBox .slideImgs{ position: absolute; left: 0; top: 0;}
+.slideBox .slideImgs li{ position: relative; text-align: center; overflow: hidden;}
+/*.slideBox .slideImgs li img{width: 100%; height: 100%;} 这里不拉伸，图片使用组件裁减*/
+.slideBox .slideTitles{display:none; background:rgba(0,0,0,0.5); width: 100%; height: 40px; line-height: 40px; text-align: left; font-size: 14px; position: absolute; bottom: 0; z-index: 2; color: #fff; overflow: hidden;}
+.slideBox .slideTitles p{ color:#fff; opacity:.9; padding: 0 20px; text-align:left; font-size: 14px; text-overflow: ellipsis; white-space:nowrap; overflow: hidden;}
+.slideBox .slideTitles p:hover{opacity:1;}
+.slideBox .slideTitles p a{color:#fff; opacity:.9; font-size: 14px;}
+.slideBox .slideTitles p a:hover{opacity:1;}
+.slideBox .showPrev,
+.slideBox .showNext{ display: none; position:absolute; cursor: pointer; top:50%; margin-top:-27px; width: 54px; height: 54px; line-height: 54px; background:#000; color: #fff; filter:alpha(opacity=30);opacity:0.3; font-size: 24px; font-weight:bold; text-align: center;}
+.slideBox .showPrev{ left:0;}
+.slideBox .showNext{ right:0;}
+.slideBox .showPrev:hover,
+.slideBox .showNext:hover{ filter:alpha(opacity=60);opacity:0.6; }
+.slideBox .slideNum{ position:absolute; right: 6px; bottom: 14px; z-index: 3; }
+.slideBox .slideNum span{ width: 14px; height: 14px; display: inline-block; cursor: pointer; width: 8px; height: 8px; background:#fff; color:#fff; opacity:0.3; filter:alpha(opacity=30); border-radius: 6px; margin: 0 6px; text-indent: -999em; text-align:left; color: #fff; font-family: "Verdana";}
+.slideBox .slideNum span.active{ opacity:1; filter:alpha(opacity=100); }
+.slideBox .morePhoto{width:70px; height:24px; text-align:center; line-height:24px; color:#fff; background:#FF6161; position:absolute; right:0; top:0; font-size:12px; z-index: 4;}
+/**图片轮播*/

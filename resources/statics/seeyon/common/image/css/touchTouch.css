@@ -1,0 +1,72 @@
+@charset "utf-8";
+.galleryOverlayIframe{width:100%;height:100%; position: absolute; left: 0; top: 0; opacity:0;z-index:99999;filter:alpha(opacity=0);}
+.galleryOverlay{width:100%;height:100%;position:fixed;top:0;left:0;opacity:0;z-index:100000;background:url(../img/blackOpacity50.png) \9;background-color:rgba(0,0,0,.8);overflow:hidden;display:none;-moz-transition:opacity 1s ease;-webkit-transition:opacity 1s ease;transition:opacity 1s ease}
+.galleryOverlay.visible{opacity:1}
+.galleryOverlay .gallerySlider{height:100%;left:0;top:0;width:100%;white-space:nowrap;position:absolute;-moz-transition:left .4s ease;-webkit-transition:left .4s ease;transition:left .4s ease}
+/** 内容区域  */
+.galleryOverlay .gallerySlider .placeholder{height:100%;line-height:1px;text-align:center;width:100%;display:inline-block;position:relative;vertical-align: middle;}
+.galleryOverlay .gallerySlider .placeholder.bgloading{background:url(../img/preloader.gif) no-repeat center center;}
+.galleryOverlay .gallerySlider .placeholder.nobg{background:none;}
+.galleryOverlay .gallerySlider .placeholder.hide_img{display: none;}
+.galleryOverlay .gallerySlider .placeholder.block_img{display: block; overflow: hidden;}
+.galleryOverlay .gallerySlider .placeholder:before{content:"";display:inline-block;height:50%;width:1px;margin-right:-1px}
+.galleryOverlay .gallerySlider .placeholder img.normal{display:inline-block;max-height:100%;max-width:100%;vertical-align:middle}
+.galleryOverlay .gallerySlider .placeholder img.scaling{display:inline-block;position: absolute;top:0px;cursor: pointer;}
+.galleryOverlay .gallerySlider .placeholder .loadfailure{line-height: 12px;color: #FFF;width: 100px;margin: 0px auto;padding: 5px 0px;}
+/** 上一个、下一个 */
+.galleryOverlay .gallerySlider.rightSpring{-moz-animation:rightSpring .3s;-webkit-animation:rightSpring .3s}
+.galleryOverlay .gallerySlider.leftSpring{-moz-animation:leftSpring .3s;-webkit-animation:leftSpring .3s}
+.galleryOverlay .nextArrow,.galleryOverlay .prevArrow{border:none;text-decoration:none;background:url(../img/arrows.png) no-repeat;opacity:1;cursor:pointer;position:absolute;width:54px;height:54px;top:50%;margin-top:-27px;-moz-transition:opacity .2s ease;-webkit-transition:opacity .2s ease;transition:opacity .2s ease}
+.galleryOverlay .nextArrow:hover,.galleryOverlay .prevArrow:hover{opacity:1}
+.galleryOverlay .prevArrow{background-position:left top;left:40px}
+.galleryOverlay .nextArrow{background-position:right top;right:40px}
+.galleryOverlay .hideOverlay{ border:none;text-decoration:none;background:url(../img/close.png) no-repeat;opacity:1;cursor:pointer;position:absolute;width:35px;height:35px;top:15px; right:15px;}
+.gallery-content-area{background:url(../img/blackOpacity50.png) \9;background-color:rgba(0,0,0,0.5); color: #fff;text-align: center;position: absolute;width: 100%;z-index: 100;bottom: 0;height: 50px; }
+/** 人员头像位置 */
+.gallery-content-area .userPic{ position:absolute; left:0px;width:50px; height:50px;display: inline-block;}
+.gallery-content-area .userPic img{ width:40px; height:40px; border-radius:20px;margin: 5px 10px;}
+.gallery-content-area .line-content{display: inline-block;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;text-align: left;}
+.gallery-content-area .show-content{height:50px;line-height:50px;position:absolute; left:60px;width:490px;}
+.gallery-content-area .show-content-link{cursor: pointer;}
+.gallery-content-area .show-content-link:hover{color: #296fbe;}
+.gallery-content-area .show-content img{vertical-align: top;margin-top: 16px;width: 22px;}
+.gallery-content-area .dispaly-content{font-size: 16px;height:50px;line-height:50px;position:absolute; left:10px;width:330px;}
+/*放大缩小图片6.1*/
+.scale-toolbox{width: 400px;height: 50px;margin: 0px auto;text-align: center;}
+.scale-toolbox .viewRotate{overflow: hidden; display: inline-block; height: 26px; width: 26px; line-height: 26px; background-image: url(../img/viewRotate.png); background-repeat: no-repeat; background-position: 0 0; vertical-align: middle; cursor: pointer; }
+.scale-toolbox .viewOrginal{display:inline-block;margin: 13px 5px 0px 0px;height: 20px;text-decoration: none;cursor: pointer; width: 78px; font-size: 18px; color: white; text-align: center;}
+.scale-toolbox span{vertical-align: top;margin: 13px 10px 0;}
+.scale-toolbox span.viewScale{line-height: 24px;font-size: 16px;display: inline-block;color: #FFF;width: 40px;}
+/*秀的点赞、回复*/
+.gallery-content-area .moreAction{ position: absolute; right: 9px; bottom: 9px; width: 80px; z-index: 101;}
+.gallery-content-area .moreAction p{ display: none; border-radius: 5px; border:1px solid #ccc; padding: 5px; margin-bottom: 5px; text-align: center;cursor: pointer;}
+.gallery-content-area .moreAction p:hover{ background:#666;}
+.gallery-content-area .moreAction span.moreAction32{background:url(../img/more1.png) no-repeat; width: 32px; height: 32px; display: block; margin: 0 auto; cursor: pointer;}
+.gallery-content-area .moreAction span.ico16{ vertical-align:top;margin: 4px 5px 0 0;}
+.gallery-content-area .moreAction span.liked_gray,.moreAction span.estimate_gray{color:#fff;display: inline-block;height: 24px;line-height: 24px;}
+.gallery-content-area .moreAction span.liked_gray{ right:10px; cursor:pointer;}
+.gallery-content-area .moreAction span.estimate_gray{ right:80px; cursor:pointer;}
+/** 扩展区域功能  */
+.gallery-content-area .extendArea{position: absolute; right: 10px; bottom: 0px; z-index: 101;height: 50px;}
+/* Firefox动画*/
+@-moz-keyframes rightSpring{
+	0%{margin-left:0px;}
+	50%{margin-left:-30px;}
+	100%{margin-left:0px;}
+}
+@-moz-keyframes leftSpring{
+	0%{margin-left:0px;}
+	50%{margin-left:30px;}
+	100%{margin-left:0px;}
+}
+/* Safari and Chrome 动画 */
+@-webkit-keyframes rightSpring{
+	0%{margin-left:0px;}
+	50%{margin-left:-30px;}
+	100%{margin-left:0px;}
+}
+@-webkit-keyframes leftSpring{
+	0%{margin-left:0px;}
+	50%{margin-left:30px;}
+	100%{margin-left:0px;}
+}

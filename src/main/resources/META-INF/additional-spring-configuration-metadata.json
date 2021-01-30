@@ -1,0 +1,40 @@
+{
+  "properties": [
+    {
+      "name": "server.multiPorts",
+      "type": "java.lang.String",
+      "description": "多端口配置.",
+      "defaultValue": "80,8000-9000"
+    },
+    {
+      "name": "loki.adminPath",
+      "type": "java.lang.String",
+      "description": "后台路径配置."
+    },
+    {
+      "name": "loki.adminPort",
+      "type": "java.lang.String",
+      "description": "后台端口配置，该端口必须存在于多端口配置中，否则后台无法访问."
+    },
+    {
+      "name": "loki.username",
+      "type": "java.lang.String",
+      "description": "后台账号."
+    },
+    {
+      "name": "loki.password",
+      "type": "java.lang.String",
+      "description": "后台密码."
+    },
+    {
+      "name": "loki.templates",
+      "type": "java.lang.String",
+      "description": "Loki模板路径."
+    },
+    {
+      "name": "loki.statics",
+      "type": "java.lang.String",
+      "description": "Loki模板静态资源(images,js,css)的路径."
+    }
+  ]
+}

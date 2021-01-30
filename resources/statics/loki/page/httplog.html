@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HttpLog</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <script src="/js/base64.min.js"></script>
+
+</head>
+<body>
+
+<table class="layui-hide" id="httplog" lay-filter="httplog" ></table>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 5px;">
+    <legend>请求面板</legend>
+</fieldset>
+
+
+<div style="padding: 5px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">请求</div>
+                <div class="layui-card-body">
+                        <pre class="layui-code" id="request" lay-skin="notepad">
+public class Loki {
+    public static void main(String[] args) {
+        System.out.println("request");
+    }
+}
+                        </pre>
+                </div>
+                </pre>
+            </div>
+        </div>
+        <div class="layui-col-md6">
+            <div class="layui-card">
+                <div class="layui-card-header">响应</div>
+                <div class="layui-card-body" >
+                        <pre class="layui-code" id="response" lay-skin="notepad">
+public class Loki {
+    public static void main(String[] args) {
+        System.out.println("response");
+    }
+}
+                        </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<script src="/layui/layui.js" charset="utf-8"></script>
+
+<script>
+    layui.use(['table','element', 'jquery'], function(){
+
+        var table = layui.table;
+        var element = layui.element;
+        var $ = layui.jquery;
+
+        table.render({
+            elem: '#httplog'
+            ,url:'/api/httplog/get'
+            ,cellMinWidth: 80
+            ,cols: [
+                [
+                    {field:'id', width:'10%', title: '数据id'}
+                    ,{field:'ip', width:'10%', title: '来源地址'}
+                    ,{field:'method', width:'10%', title: '请求方法'}
+                    ,{field:'path', width:'25%', title: '请求路径'}
+                    ,{field:'parameter', width:'35%', title: '请求参数'}
+                    ,{field:'vuln', width:'10%', title: '漏洞类型'}
+                ]
+            ]
+            ,total:true
+            ,page: {
+                layout: ['prev', 'next', 'skip', 'count', 'limit', 'refresh']
+            }
+            ,parseData: function(res){ //res 即为原始返回的数据
+                return {
+                    "code": res.code, //解析接口状态
+                    "message": res.message, //解析提示文本
+                    "count":res.count,
+                    "data": res.data //解析数据列表
+                };
+            }
+        });
+
+        //监听行单击事件（双击事件为：rowDouble）
+        table.on('row(httplog)', function(obj){
+            var data = obj.data;
+
+            var request = document.getElementById("request");
+            request.innerHTML=Base64.decode(data['request']);
+
+            var response = document.getElementById("response");
+            response.innerHTML=Base64.decode(data['response']);
+
+            //标注选中样式
+            obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+        });
+
+        //自动刷新
+        setInterval(function () {
+            $(".layui-icon-refresh").click();
+        }, 10000);
+
+
+
+    });
+</script>
+
+</body>
+</html>

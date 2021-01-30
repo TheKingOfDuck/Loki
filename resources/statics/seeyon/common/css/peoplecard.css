@@ -1,0 +1,242 @@
+.peoplecard_pageTur{	
+	float: left;
+	position: relative;
+	padding-bottom: 15px;
+	
+}
+
+/*.peoplecard_pageTur .peoplecard_cd_list{
+box-shadow: 0px 0px 4px #cdd1d4 ;
+}*/
+
+.peoplecard_pageTurning{
+	position: absolute;
+	display: inline-block;
+	right:-1px;
+	top:-1px;
+	width:18px;
+	height:18px;
+	cursor: pointer;
+	z-index: -1;
+}
+
+
+.peoplecard_pageTurning.peoplecard_pageCover{
+	background: #f9f9f9;
+	z-index: 40;
+}
+.peoplecard_pageTurning.peoplecard_ImgMove{
+background: url(../images/cardShow.png?V=V6_1_2017-04-13);
+right:-1px;
+	top:-1px;
+z-index: 40;
+	background-color: #f9f9f9;
+}
+
+.peoplecard_pageTurning.peoplecard_ImgBlue{
+background: url(../images/cardShowCu.png?V=V6_1_2017-04-13);	
+right:-1px;
+	top:-1px;
+	z-index: 40;
+	background-color: #f9f9f9;
+}
+
+.peoplecard_cd_list{
+	width:390px;
+	height:160px;
+	border:1px solid #cdd1d4;
+	
+	padding:25px 18px;
+	position: relative;
+	background: #fff;
+	z-index: 0;
+}
+
+.peoplecard_cd_list .peoplecard_cd_img span{
+display: inline-block;
+width:62px;
+height:62px;
+border-radius: 50%;
+margin-right: 14px;
+cursor: pointer;
+}
+.peoplecard_cd_list dl{
+	color:#5a5a5a;
+}
+.peoplecard_cd_list dl dd.peoplecard_cd_name{
+ font-size:18px;
+ color:#5a5a5a;
+ padding-bottom: 10px;
+}
+.peoplecard_cd_list dl dd.peoplecard_cd_name span{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 18px;
+	color:#5193e1;
+}
+
+.peoplecard_cd_list dl dt.peoplecard_cd_detail{
+	height:26px;
+	line-height: 26px;
+}
+
+.peoplecard_cd_list dl dt.peoplecard_cd_detail .peoplecard_cd_email{
+	color:#5193e1;
+}
+
+.peoplecard_bigCard{
+	;
+	background: #fff;
+	width:454px;
+	display: none;
+	border:1px solid #777777;
+	box-shadow: 0 0 15px #777777;
+}
+.peoplecard_cardList  .peoplecard_header{
+	background: #f1f1f2;
+}
+.peoplecard_cardList .peoplecard_bigCard{
+	position: absolute;
+	z-index: 130;
+	top:10px;
+	right:300px
+}
+.peoplecard_bigCard .peoplecard_cd_list{
+	height:415px;
+	border:0;
+	width:418px;
+	min-width: 200px;
+}
+.peoplecard_bigCard .peoplecard_cd_list em.close{
+	display: inline-block;
+	width:19px;
+	height:19px;
+	background: url(../images/deleteBtn.png?V=V6_1_2017-04-13);
+	position: relative;
+	left:130px;
+	cursor: pointer;
+}
+.peoplecard_bigCard .peoplecard_cd_list em.peoplecard_close:hover{
+background: url(../images/deleteBtnCurr.png?V=V6_1_2017-04-13);
+}
+.peoplecard_bigCard .peoplecard_cd_list .peoplecard_cd_img{
+	
+}
+.peoplecard_bigCard .peoplecard_cd_list dl{
+	
+	margin-bottom: 18px;
+}
+.peoplecard_bigCard .peoplecard_cd_list dl.peoplecard_basicMsg{
+	border-top: 1px solid #e5e5e5;
+	clear: both;
+	padding-left: 78px;
+	width:81%;
+	display: block;
+	padding-top: 15px;
+
+}
+.peoplecard_bigCard .peoplecard_cd_list dl dd.peoplecard_msgWord{
+font-weight: bold;
+}
+.peoplecard_bigCard .peoplecard_cd_list dl.peoplecard_basicMsg .peoplecard_cd_detail .peoplecard_cd_bar{
+	display: inline-block;
+	width:55px;
+
+	text-align: right;;
+
+}
+
+ .peoplecard_workerRel .peoplecard_bigCard .peoplecard_cd_list {
+ 	width:100%;
+}
+
+.peoplecard_overflow{overflow: hidden;}
+.peoplecard_left{	float: left;}
+
+.peoplecard_cardMsg{
+	overflow: hidden;
+	width:100%;
+	background: #fff;
+}
+
+.peoplecard_cd_message{
+	color: #999;
+}
+
+.peoplecard_littleCard .peoplecard_sendMessage{}
+.peoplecard_littleCard .peoplecard_sendMessage .msgImg_list{
+	position: absolute;	
+	background: #fff;
+	bottom: -10px;
+	z-index: 20;
+	display: block;
+	border-left: 1px solid #cdd1d4;
+	border-right: 1px solid #cdd1d4;
+	border-bottom: 1px solid #cdd1d4;
+	box-shadow: 0 1px 1px #cdd1d4;
+	padding-bottom: 10px;
+}
+.peoplecard_littleCard .peoplecard_sendMessage{
+	overflow: visible;
+	display: none;
+}
+
+.peoplecard_sendMessage{
+	clear: both;	
+}
+
+.peoplecard_sendMessage .peoplecard_button{
+	display: inline-block;
+	height:30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+	width:30px;
+	color:#fff;
+	margin-bottom: 2px;
+	background: #f3f3f3;
+	margin-left: 15px;
+}
+.peoplecard_sendMessage .peoplecard_button em{
+	position: relative;
+	top:6px;
+	left:3px;
+}
+
+.peoplecard_bigCard .peoplecard_sendMessage{
+	height:64px;
+}
+
+.peoplecard_sendMessage a.peoplecard_margin_l_92{
+	margin-left: 92px;
+}
+
+.peoplecard_overflow{overflow: hidden;}
+
+.peoplecard_icon16{
+display: inline-block;
+width:16px;
+height:16px;
+background: url(../images/icon16.png?V=V6_1_2017-04-13) no-repeat;
+background-position: 0 0;
+position: relative;
+top:3px;
+margin-right: 5px;
+}
+
+.peoplecard_addConection_icon16{
+	background-position: 0px -32px;
+}
+.peoplecard_sendSeeyon_icon16{
+	background-position: -16px -32px;
+}
+.peoplecard_sendMsg_icon16{
+	background-position: -32px -32px;
+}
+.peoplecard_sendShortMsg_icon16{
+	background-position: -48px -32px;
+}
+.peoplecard_sendEmail_icon16{
+background-position: -64px -32px;
+}
+.peoplecard_hidden{display: none;}

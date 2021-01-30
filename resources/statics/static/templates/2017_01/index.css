@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+}
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background: url(login_bg1920.jpg) no-repeat;
+    background-size: 100% 100%;
+    -moz-user-select: none;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    -khtml-user-select: none;
+    user-select: none;
+}
+.login_form {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -400px;
+}
+@media (min-width: 1921px) {
+    body {
+        background: url(login_bg2560.jpg) no-repeat;
+    }
+}
+.tdxk {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    max-width: 100px;
+}
+.msg{
+    color:#fff;
+}
+.msg a{
+    color:#fff;
+}
+.msg a:hover{
+    color: #EFE4B0;
+}
+#center{
+    margin: 0 auto;
+    text-align: center;
+    margin-top:-40px;
+}
+img.logo{
+    max-width: 350px;
+    margin-top: 20px;
+}
+.input-wrap {
+    width: 241px;
+    height: 50px;
+    color: #666;
+    margin:0 auto;
+}
+.input-wrap.name{
+    border-bottom: 1px solid #b7c5d1;
+    margin-top:20px;
+}
+.input-wrap.password{
+    border-bottom: 1px solid #b7c5d1;
+}
+.input-wrap input{
+    border: none;
+    padding: 10px;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    outline:none;
+    font-size: 16px;
+    background:transparent;
+}
+.input-wrap label{
+    width: 70px;
+    text-align: right;
+    display: inline-block;
+}
+.login_btn{
+    margin-top: 22px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    width: 262px;
+    font-size: 15px;
+    outline:none;
+    cursor: pointer;
+    border-radius: 56px;
+    background-color: transparent;
+    border: none;
+    background-image: url(/static/templates/2017_01/login_btn.png);
+    background-position: -24px -62px;
+}
+.login_btn:hover{
+    background-position: -24px -144px;
+}
+#center i{
+    position: relative;
+}
+#center i img{
+    width:15px;
+    position: relative;
+    top:2px;
+}
+#changeLogin{
+    overflow:hidden;
+    width:300px;
+    height:290px;
+    margin:0 auto;
+    margin-top:52px;
+    background:rgba(241, 240, 240, 0.466);
+    border-radius:10px;
+}
+#changeWay{
+    width:300px;
+    height:50px;
+}
+#numSpan,#imgSpan{
+    display: block;
+    width:150px;
+    height:50px;
+    line-height:50px;
+    float:left;
+    color:#888;
+    cursor: pointer;
+}
+/* #{
+    display: block;
+    width:150px;
+    height:50px;
+    line-height:50px;
+    float:left;
+    color:#888;
+    cursor: pointer;
+} */
+.waySpan{
+    display:inline-block;
+    height:40px;
+
+}
+.selectedSpan{
+    border-bottom:2px solid #888;
+}
+.boxShow{
+    display:block;
+}
+.boxHidden{
+    display:none;
+}
+#erweima{
+    width:140px;
+    height:140px;
+    display:block;
+    margin:0 auto;
+    margin-top:30px;
+}
+#userImg{
+    overflow:hidden;
+    width:300px;
+    height:290px;
+    margin:0 auto;
+    margin-top:52px;
+    background:rgba(241, 240, 240, 0.466);
+    border-radius:10px;
+}
+#headIcon{
+    width:140px;
+    height:140px;
+    margin:0 auto;
+    margin-top:42px;
+    background:#fff;
+}
+.mobileCue{
+    display:block;
+    width:200px;
+    height:20px;
+    line-height:20px;
+    margin:0 auto;
+    margin-top:10px;
+    font-size:13px;
+}
+#nickName{
+    display:block;
+    width:200px;
+    height:20px;
+    line-height:20px;
+    margin:0 auto;
+    margin-top:20px;
+    font-size:13px;
+}
+.backLogin{
+    display:block;
+    width:200px;
+    height:20px;
+    line-height:20px;
+    font-weight:bold;
+    margin:0 auto;
+    margin-top:20px;
+    color:#666;
+    font-size:13px;
+    cursor: pointer;
+}
+#imgLogin{
+    width:300px;
+    height:300px;
+    text-align: center;
+}
+#overTime{
+    width:300px;
+    height:300px;
+    text-align: center;
+    overflow:hidden;
+}
+#invalidImg{
+    width:140px;
+    height:140px;
+    display:block;
+    margin:0 auto;
+    margin-top:30px;
+    cursor: pointer;
+    background:#fff;
+}
+.overTimeSpan{
+    display:block;
+    margin-top:30px;
+    color:#666;
+    font-size:12px;
+}
+.erweimaSpan{
+    display:block;
+    margin-top:30px;
+    color:#bbb;
+    font-size:14px;
+}
+.app-link{
+    display:block;
+    margin-top:30px;
+    color:#666;
+    font-size:12px;
+}
+.app-link>a{
+    color:#666;
+    text-decoration:none;
+}

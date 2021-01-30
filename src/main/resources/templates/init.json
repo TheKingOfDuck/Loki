@@ -1,0 +1,33 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "/api/httplog"
+  },
+  "logoInfo": {
+    "title": "LOKI-ADMIN",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "流量管理",
+          "href": "./page/table.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "系统设置",
+          "href": "./page/setting.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}
