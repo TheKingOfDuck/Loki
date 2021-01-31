@@ -22,6 +22,8 @@ springboot + thymeleaf + sqlite
 
 编辑application.yml修改默认后台,端口,账号密码等配置,然后执行java -jar loki.jar启动项目。
 
+了解更多: [https://thekingofduck.github.io/post/loki-web-honeypot/](https://thekingofduck.github.io/post/loki-web-honeypot/)
+
 ```
 server:
   port: 80
