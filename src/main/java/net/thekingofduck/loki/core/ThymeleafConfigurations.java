@@ -10,6 +10,15 @@ import org.thymeleaf.templatemode.TemplateMode;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * Project: loki
+ * Date:2021/1/10 下午5:58
+ * @author CoolCat
+ * @version 1.0.0
+ * Github:https://github.com/TheKingOfDuck
+ * When I wirting my code, only God and I know what it does. After a while, only God knows.
+ */
+
 @Configuration
 public class ThymeleafConfigurations {
 

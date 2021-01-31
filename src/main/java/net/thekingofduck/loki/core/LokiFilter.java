@@ -21,9 +21,8 @@ import java.util.Enumeration;
 import java.util.Map;
 
 /**
- * Project: loki_2020-01-24_V2
+ * Project: loki
  * Date:2021/1/30 下午11:01
- *
  * @author CoolCat
  * @version 1.0.0
  * Github:https://github.com/TheKingOfDuck

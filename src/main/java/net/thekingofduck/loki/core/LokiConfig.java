@@ -6,9 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import javax.servlet.Filter;
 
 /**
- * Project: loki_2020-01-24_V2
+ * Project: loki
  * Date:2021/1/30 下午11:03
- *
  * @author CoolCat
  * @version 1.0.0
  * Github:https://github.com/TheKingOfDuck

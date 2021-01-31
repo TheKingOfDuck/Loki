@@ -8,6 +8,15 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Project: loki
+ * Date:2021/1/9 下午5:20
+ * @author CoolCat
+ * @version 1.0.0
+ * Github:https://github.com/TheKingOfDuck
+ * When I wirting my code, only God and I know what it does. After a while, only God knows.
+ */
+
 @Data
 @Component
 @Configuration

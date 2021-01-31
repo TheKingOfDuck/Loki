@@ -3,7 +3,6 @@ package net.thekingofduck.loki.model;
 /**
  * Project: loki
  * Date:2021/1/9 下午5:25
- *
  * @author CoolCat
  * @version 1.0.0
  * Github:https://github.com/TheKingOfDuck

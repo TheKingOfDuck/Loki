@@ -78,11 +78,5 @@
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.6" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator-autoconfigure:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: io.micrometer:micrometer-core:1.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
   </component>
 </module>
