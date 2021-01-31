@@ -1,5 +1,6 @@
 # Loki
 
+Releases下载：[https://github.com/TheKingOfDuck/Loki/releases/tag/0.1](https://github.com/TheKingOfDuck/Loki/releases/tag/0.1)
 
 ## 更新日志
 
@@ -20,7 +21,7 @@ springboot + thymeleaf + sqlite
 
 ### 使用
 
-编辑application.yml修改默认后台,端口,账号密码等配置,然后执行java -jar loki.jar启动项目。
+编辑application.yml修改默认后台,端口,账号密码等配置,然后执行`java -jar loki.jar`启动项目。
 
 了解更多: [https://thekingofduck.github.io/post/loki-web-honeypot/](https://thekingofduck.github.io/post/loki-web-honeypot/)
 
