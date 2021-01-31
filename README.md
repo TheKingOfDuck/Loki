@@ -24,3 +24,15 @@ springboot + thymeleaf + sqlite
 4.后台指定端口配置
 
 ### 待处理
+
+
+### 使用
+
+
+![](https://github.com/TheKingOfDuck/Loki/blob/main/docs/images/admin1.png)
+
+![](https://github.com/TheKingOfDuck/Loki/blob/main/docs/images/admin2.png)
+
+![](https://github.com/TheKingOfDuck/Loki/blob/main/docs/images/tongda.png)
+
+![](https://github.com/TheKingOfDuck/Loki/blob/main/docs/images/seeyon.png)
