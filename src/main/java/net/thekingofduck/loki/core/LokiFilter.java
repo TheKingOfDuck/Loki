@@ -1,24 +1,20 @@
 package net.thekingofduck.loki.core;
 
-//import cn.hutool.core.codec.Base64;
-import java.util.Base64;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;
-import net.thekingofduck.loki.common.Utils;
 import net.thekingofduck.loki.mapper.HttpLogMapper;
 import net.thekingofduck.loki.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.StringUtils;
+import org.apache.commons.io.IOUtils;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.Map;
 
 /**
  * Project: loki
@@ -38,6 +34,9 @@ public class LokiFilter implements Filter{
     @Value("${loki.adminPort}")
     private Integer adminPort;
 
+    @Value("${loki.adminPath}")
+    private String adminPath;
+
     public static String getTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String  nowtime = df.format(new Date());
@@ -51,43 +50,38 @@ public class LokiFilter implements Filter{
         log.info("Loki Filter is init.... ");
     }
 
+   public String getHeaders(HttpServletRequest request){
+
+       StringBuilder headerStr = new StringBuilder();
+       Enumeration headerNames = request.getHeaderNames();
+       while (headerNames.hasMoreElements()){
+           String headerKey = (String) headerNames.nextElement();
+           String headerValue = request.getHeader(headerKey);
+           headerStr.append(String.format("%s: %s\r\n", headerKey, headerValue));
+       }
+       return headerStr.toString();
+   }
+
+
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
 
-        String ip = request.getRemoteAddr();
-        String method = request.getMethod();
-        String path = request.getServletPath();
-        Map<String, String[]> param = request.getParameterMap();
-        String parameter = Utils.params2string(param);
-
-        StringBuilder headerStr = new StringBuilder();
-        Enumeration headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements()){
-            String headerKey = (String) headerNames.nextElement();
-            String headerValue = request.getHeader(headerKey);
-            headerStr.append(String.format("%s: %s\r\n", headerKey, headerValue));
-        }
-
-        StringBuilder body = new StringBuilder();
-        String str = null;
         try {
-            BufferedReader br = request.getReader();
-            while ((str = br.readLine())!=null){
-                body.append(str);
+            String ip = request.getRemoteAddr();
+            String method = request.getMethod();
+            String path = request.getRequestURI();
+
+            if (!path.contains(adminPath)&&!adminPort.equals(request.getServerPort())){
+                String body =  Base64.getEncoder().encodeToString(IOUtils.toString(request.getInputStream()).getBytes());
+                String headerStr = new String(Base64.getEncoder().encode(getHeaders(request).getBytes(StandardCharsets.UTF_8)));
+                String parameter = request.getQueryString();
+                if (!new AuthService().check(request)){
+                    httpLogMapper.addHttpLog(ip,method,path,parameter, headerStr, body,getTime());
+                }
             }
-        }catch (Exception e){
-            body.append(e.getMessage());
-        }
 
-        String time = getTime();
-
-        String bheaderStr = Base64.getEncoder().encodeToString(headerStr.toString().getBytes());
-        String bbody = Base64.getEncoder().encodeToString(body.toString().getBytes());
-
-        if (!new AuthService().check(request)){
-            httpLogMapper.addHttpLog(ip,method,path,parameter, bheaderStr, bbody,time);
-        }
+        }catch (Exception e){}
 
         filterChain.doFilter(request, response);
     }
