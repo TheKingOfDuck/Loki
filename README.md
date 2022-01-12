@@ -1,6 +1,6 @@
 # Loki
 
-Releases下载：[https://github.com/TheKingOfDuck/Loki/releases/tag/0.1](https://github.com/TheKingOfDuck/Loki/releases/tag/0.1)
+Releases下载：[https://github.com/TheKingOfDuck/Loki/releases/tag/0.2](https://github.com/TheKingOfDuck/Loki/releases/tag/0.2)
 
 ## 更新日志
   * 20210111 修改了获取部分字段的方式。
