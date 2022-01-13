@@ -3,7 +3,7 @@
 Releases下载：[https://github.com/TheKingOfDuck/Loki/releases/tag/0.2](https://github.com/TheKingOfDuck/Loki/releases/tag/0.2)
 
 ## 更新日志
-  * 20210111 修改了获取部分字段的方式。
+  * 20220111 修改了获取部分字段的方式。
   * 20210107 实现多端口监听
   * 20210103 实现动态配置相关页面
   * 20210124 实现配置指定端口指向指定模板文件
